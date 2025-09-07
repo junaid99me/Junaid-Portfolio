@@ -1,0 +1,2014 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junaid - Creative Developer & Designer. Building futuristic digital experiences with cutting-edge technology and innovative design.">
+    <meta name="keywords" content="developer, designer, portfolio, web development, creative, futuristic, interactive">
+    <meta name="author" content="Junaid">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://junaid.dev/">
+    <meta property="og:title" content="Junaid - Creative Developer & Designer">
+    <meta property="og:description" content="Building futuristic digital experiences with cutting-edge technology and innovative design.">
+    <meta property="og:image" content="https://junaid.dev/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://junaid.dev/">
+    <meta property="twitter:title" content="Junaid - Creative Developer & Designer">
+    <meta property="twitter:description" content="Building futuristic digital experiences with cutting-edge technology and innovative design.">
+    <meta property="twitter:image" content="https://junaid.dev/og-image.jpg">
+
+    <title>Junaid - Creative Developer & Designer</title>
+    
+    <!-- Favicon -->
+
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="masterclass-3d.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-trail"></div>
+    </div>
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">J</span>
+                <div class="logo-glow"></div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="gradient-bg"></div>
+                <div class="particles" id="particles"></div>
+                <div class="neon-waves"></div>
+                <div class="hero-grid-overlay"></div>
+                <div class="hero-orbs">
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="orb orb-3"></div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+
+                        <span class="badge-text">Available for Projects</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">I'm</span>
+                        <span class="title-line glitch" data-text="Junaid">Junaid</span>
+                        <span class="title-accent">.</span>
+                    </h1>
+                    
+                    <div class="hero-subtitle-container">
+                        <p class="hero-subtitle">
+                            <span class="typewriter" id="typewriter"></span>
+                            <span class="cursor-blink">|</span>
+                        </p>
+                        <div class="subtitle-decoration">
+                            <div class="decoration-line"></div>
+                            <div class="decoration-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description">
+                        Crafting digital experiences that blur the line between imagination and reality. 
+                        <span class="highlight-text">Transforming ideas into interactive masterpieces.</span>
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">% Success</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="cta-button primary" id="ctaButton">
+                            <span class="button-text">View My Work</span>
+                            <div class="button-glow"></div>
+                            <div class="button-particles"></div>
+                        </button>
+                        <button class="cta-button secondary" id="contactButton">
+                            <span class="button-text">Get In Touch</span>
+                            <div class="button-glow"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <!-- Masterclass 3D Animation System - Integrated -->
+                    <div class="masterclass-3d-scene">
+                        <!-- 3D Scene Container -->
+                        <div class="scene-3d-container">
+                            <!-- Central Holographic Core -->
+                            <div class="holographic-core">
+                                <div class="core-inner">
+                                    <div class="quantum-sphere">
+                                        <div class="sphere-layer layer-1"></div>
+                                        <div class="sphere-layer layer-2"></div>
+                                        <div class="sphere-layer layer-3"></div>
+                                        <div class="sphere-layer layer-4"></div>
+                                                                       <div class="quantum-particles">
+                                   <div class="q-particle q-1"></div>
+                                   <div class="q-particle q-2"></div>
+                                   <div class="q-particle q-3"></div>
+                                   <div class="q-particle q-4"></div>
+                                   <div class="q-particle q-5"></div>
+                                   <div class="q-particle q-6"></div>
+                                   <div class="q-particle q-7"></div>
+                                   <div class="q-particle q-8"></div>
+                                   <div class="q-particle q-9"></div>
+                                   <div class="q-particle q-10"></div>
+                                   <div class="q-particle q-11"></div>
+                                   <div class="q-particle q-12"></div>
+                                   <div class="q-particle q-13"></div>
+                                   <div class="q-particle q-14"></div>
+                                   <div class="q-particle q-15"></div>
+                                   <div class="q-particle q-16"></div>
+                                   <div class="q-particle q-17"></div>
+                                   <div class="q-particle q-18"></div>
+                                   <div class="q-particle q-19"></div>
+                                   <div class="q-particle q-20"></div>
+                               </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                               <!-- 3D Holographic Cube System -->
+                   <div class="holographic-cube-system">
+                       <div class="holographic-cube cube-1">
+                           <div class="cube-face face-front"></div>
+                           <div class="cube-face face-back"></div>
+                           <div class="cube-face face-left"></div>
+                           <div class="cube-face face-right"></div>
+                           <div class="cube-face face-top"></div>
+                           <div class="cube-face face-bottom"></div>
+                           <div class="cube-wireframe">
+                               <div class="wire-edge edge-1"></div>
+                               <div class="wire-edge edge-2"></div>
+                               <div class="wire-edge edge-3"></div>
+                               <div class="wire-edge edge-4"></div>
+                               <div class="wire-edge edge-5"></div>
+                               <div class="wire-edge edge-6"></div>
+                               <div class="wire-edge edge-7"></div>
+                               <div class="wire-edge edge-8"></div>
+                               <div class="wire-edge edge-9"></div>
+                               <div class="wire-edge edge-10"></div>
+                               <div class="wire-edge edge-11"></div>
+                               <div class="wire-edge edge-12"></div>
+                           </div>
+                           <div class="holographic-particles">
+                               <div class="holo-particle p1"></div>
+                               <div class="holo-particle p2"></div>
+                               <div class="holo-particle p3"></div>
+                               <div class="holo-particle p4"></div>
+                               <div class="holo-particle p5"></div>
+                               <div class="holo-particle p6"></div>
+                           </div>
+                       </div>
+                       <div class="holographic-cube cube-2">
+                           <div class="cube-face face-front"></div>
+                           <div class="cube-face face-back"></div>
+                           <div class="cube-face face-left"></div>
+                           <div class="cube-face face-right"></div>
+                           <div class="cube-face face-top"></div>
+                           <div class="cube-face face-bottom"></div>
+                           <div class="cube-wireframe">
+                               <div class="wire-edge edge-1"></div>
+                               <div class="wire-edge edge-2"></div>
+                               <div class="wire-edge edge-3"></div>
+                               <div class="wire-edge edge-4"></div>
+                               <div class="wire-edge edge-5"></div>
+                               <div class="wire-edge edge-6"></div>
+                               <div class="wire-edge edge-7"></div>
+                               <div class="wire-edge edge-8"></div>
+                               <div class="wire-edge edge-9"></div>
+                               <div class="wire-edge edge-10"></div>
+                               <div class="wire-edge edge-11"></div>
+                               <div class="wire-edge edge-12"></div>
+                           </div>
+                           <div class="holographic-particles">
+                               <div class="holo-particle p1"></div>
+                               <div class="holo-particle p2"></div>
+                               <div class="holo-particle p3"></div>
+                               <div class="holo-particle p4"></div>
+                           </div>
+                       </div>
+                   </div>
+
+                            <!-- Floating Tech Elements -->
+                            <div class="floating-tech">
+                                <div class="tech-element tech-1">
+                                    <div class="tech-icon">⚡</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                                <div class="tech-element tech-2">
+                                    <div class="tech-icon">🔮</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                                <div class="tech-element tech-3">
+                                    <div class="tech-icon">🌐</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                                <div class="tech-element tech-4">
+                                    <div class="tech-icon">🚀</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                                <div class="tech-element tech-5">
+                                    <div class="tech-icon">💎</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                                <div class="tech-element tech-6">
+                                    <div class="tech-icon">⚛️</div>
+                                    <div class="tech-trail"></div>
+                                </div>
+                            </div>
+
+                                               <!-- Energy Beams -->
+                   <div class="energy-beams">
+                       <div class="beam beam-1"></div>
+                       <div class="beam beam-2"></div>
+                       <div class="beam beam-3"></div>
+                       <div class="beam beam-4"></div>
+                       <div class="beam beam-5"></div>
+                       <div class="beam beam-6"></div>
+                       <div class="beam beam-7"></div>
+                       <div class="beam beam-8"></div>
+                       <div class="beam beam-9"></div>
+                   </div>
+
+                                               <!-- Data Streams -->
+                   <div class="data-streams">
+                       <div class="stream stream-1">
+                           <div class="data-bit bit-1"></div>
+                           <div class="data-bit bit-2"></div>
+                           <div class="data-bit bit-3"></div>
+                           <div class="data-bit bit-4"></div>
+                       </div>
+                       <div class="stream stream-2">
+                           <div class="data-bit bit-5"></div>
+                           <div class="data-bit bit-6"></div>
+                           <div class="data-bit bit-7"></div>
+                           <div class="data-bit bit-8"></div>
+                       </div>
+                       <div class="stream stream-3">
+                           <div class="data-bit bit-9"></div>
+                           <div class="data-bit bit-10"></div>
+                           <div class="data-bit bit-11"></div>
+                           <div class="data-bit bit-12"></div>
+                       </div>
+                       <div class="stream stream-4">
+                           <div class="data-bit bit-13"></div>
+                           <div class="data-bit bit-14"></div>
+                           <div class="data-bit bit-15"></div>
+                           <div class="data-bit bit-16"></div>
+                       </div>
+                       <div class="stream stream-5">
+                           <div class="data-bit bit-17"></div>
+                           <div class="data-bit bit-18"></div>
+                           <div class="data-bit bit-19"></div>
+                           <div class="data-bit bit-20"></div>
+                       </div>
+                       <div class="stream stream-6">
+                           <div class="data-bit bit-21"></div>
+                           <div class="data-bit bit-22"></div>
+                           <div class="data-bit bit-23"></div>
+                           <div class="data-bit bit-24"></div>
+                       </div>
+                   </div>
+
+                            <!-- Holographic Grid -->
+                            <div class="holographic-grid">
+                                <div class="grid-line line-1"></div>
+                                <div class="grid-line line-2"></div>
+                                <div class="grid-line line-3"></div>
+                                <div class="grid-line line-4"></div>
+                                <div class="grid-line line-5"></div>
+                                <div class="grid-line line-6"></div>
+                                <div class="grid-line line-7"></div>
+                                <div class="grid-line line-8"></div>
+                            </div>
+
+                            <!-- Status Indicators -->
+                            <div class="status-indicators">
+                                <div class="status-indicator status-1">
+                                    <div class="status-dot"></div>
+                                    <div class="status-pulse"></div>
+                                    <span class="status-text">AI</span>
+                                </div>
+                                <div class="status-indicator status-2">
+                                    <div class="status-dot"></div>
+                                    <div class="status-pulse"></div>
+                                    <span class="status-text">3D</span>
+                                </div>
+                                <div class="status-indicator status-3">
+                                    <div class="status-dot"></div>
+                                    <div class="status-pulse"></div>
+                                    <span class="status-text">WEB</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Controls -->
+                        <div class="interactive-controls">
+                            <div class="control-panel">
+                                <div class="control-button control-1" data-action="accelerate">
+                                    <div class="button-glow"></div>
+                                    <span>ACCELERATE</span>
+                                </div>
+                                <div class="control-button control-2" data-action="stabilize">
+                                    <div class="button-glow"></div>
+                                    <span>STABILIZE</span>
+                                </div>
+                                <div class="control-button control-3" data-action="quantum">
+                                    <div class="button-glow"></div>
+                                    <span>QUANTUM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span class="scroll-text">Scroll to explore</span>
+                <div class="scroll-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            
+            <div class="hero-particles" id="heroParticles"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-visual">
+                        <div class="quantum-hologram">
+                            <div class="quantum-container">
+                                <!-- DNA Helix Structure -->
+                                <div class="dna-helix">
+                                    <div class="helix-strand strand-1">
+                                        <div class="base-pair base-1"></div>
+                                        <div class="base-pair base-2"></div>
+                                        <div class="base-pair base-3"></div>
+                                        <div class="base-pair base-4"></div>
+                                        <div class="base-pair base-5"></div>
+                                        <div class="base-pair base-6"></div>
+                                        <div class="base-pair base-7"></div>
+                                        <div class="base-pair base-8"></div>
+                                    </div>
+                                    <div class="helix-strand strand-2">
+                                        <div class="base-pair base-1"></div>
+                                        <div class="base-pair base-2"></div>
+                                        <div class="base-pair base-3"></div>
+                                        <div class="base-pair base-4"></div>
+                                        <div class="base-pair base-5"></div>
+                                        <div class="base-pair base-6"></div>
+                                        <div class="base-pair base-7"></div>
+                                        <div class="base-pair base-8"></div>
+                                    </div>
+                                    <div class="helix-core"></div>
+                                </div>
+                                
+                                <!-- Neural Network -->
+                                <div class="neural-network">
+                                    <div class="neuron neuron-1">
+                                        <div class="neuron-core"></div>
+                                        <div class="neuron-connections">
+                                            <div class="connection conn-1"></div>
+                                            <div class="connection conn-2"></div>
+                                            <div class="connection conn-3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="neuron neuron-2">
+                                        <div class="neuron-core"></div>
+                                        <div class="neuron-connections">
+                                            <div class="connection conn-1"></div>
+                                            <div class="connection conn-2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="neuron neuron-3">
+                                        <div class="neuron-core"></div>
+                                        <div class="neuron-connections">
+                                            <div class="connection conn-1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="neuron neuron-4">
+                                        <div class="neuron-core"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quantum Particles -->
+                                <div class="quantum-particles">
+                                    <div class="particle quantum-1">
+                                        <div class="particle-core"></div>
+                                        <div class="particle-orbit"></div>
+                                    </div>
+                                    <div class="particle quantum-2">
+                                        <div class="particle-core"></div>
+                                        <div class="particle-orbit"></div>
+                                    </div>
+                                    <div class="particle quantum-3">
+                                        <div class="particle-core"></div>
+                                        <div class="particle-orbit"></div>
+                                    </div>
+                                    <div class="particle quantum-4">
+                                        <div class="particle-core"></div>
+                                        <div class="particle-orbit"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Holographic Data Streams -->
+                                <div class="data-streams">
+                                    <div class="stream stream-1">
+                                        <div class="data-bit bit-1"></div>
+                                        <div class="data-bit bit-2"></div>
+                                        <div class="data-bit bit-3"></div>
+                                        <div class="data-bit bit-4"></div>
+                                        <div class="data-bit bit-5"></div>
+                                    </div>
+                                    <div class="stream stream-2">
+                                        <div class="data-bit bit-1"></div>
+                                        <div class="data-bit bit-2"></div>
+                                        <div class="data-bit bit-3"></div>
+                                        <div class="data-bit bit-4"></div>
+                                    </div>
+                                    <div class="stream stream-3">
+                                        <div class="data-bit bit-1"></div>
+                                        <div class="data-bit bit-2"></div>
+                                        <div class="data-bit bit-3"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Energy Field -->
+                                <div class="energy-field">
+                                    <div class="field-layer layer-1"></div>
+                                    <div class="field-layer layer-2"></div>
+                                    <div class="field-layer layer-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-stats">
+                            <div class="stat-card" data-stat="experience">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" class="stat-svg">
+                                        <defs>
+                                            <linearGradient id="experienceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <circle cx="12" cy="12" r="10" fill="none" stroke="url(#experienceGradient)" stroke-width="2"/>
+                                        <path d="M12,6 L12,12 L16,14" fill="none" stroke="url(#experienceGradient)" stroke-width="2" stroke-linecap="round"/>
+                                        <circle cx="12" cy="12" r="3" fill="url(#experienceGradient)"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">5+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card" data-stat="projects">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" class="stat-svg">
+                                        <defs>
+                                            <linearGradient id="projectsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M3,3 L21,3 L21,21 L3,21 Z" fill="none" stroke="url(#projectsGradient)" stroke-width="2"/>
+                                        <path d="M3,9 L21,9" stroke="url(#projectsGradient)" stroke-width="2"/>
+                                        <path d="M9,21 L9,9" stroke="url(#projectsGradient)" stroke-width="2"/>
+                                        <circle cx="7" cy="6" r="1" fill="url(#projectsGradient)"/>
+                                        <circle cx="11" cy="6" r="1" fill="url(#projectsGradient)"/>
+                                        <circle cx="15" cy="6" r="1" fill="url(#projectsGradient)"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Projects Completed</div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                            
+                            <div class="stat-card" data-stat="clients">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" class="stat-svg">
+                                        <defs>
+                                            <linearGradient id="clientsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M17,21 L19,21 L19,19 C19,17.35 15.15,16 12,16 C8.85,16 5,17.35 5,19 L5,21 L7,21" fill="none" stroke="url(#clientsGradient)" stroke-width="2" stroke-linecap="round"/>
+                                        <circle cx="12" cy="7" r="4" fill="none" stroke="url(#clientsGradient)" stroke-width="2"/>
+                                        <path d="M12,11 L12,14" stroke="url(#clientsGradient)" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M9,14 L15,14" stroke="url(#clientsGradient)" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">30+</div>
+                                    <div class="stat-label">Happy Clients</div>
+                                </div>
+                                <div class="stat-glow"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text">
+                        <div class="text-container">
+                            <div class="text-section active" data-section="passion">
+                                <h3 class="section-subtitle">Passion for Innovation</h3>
+                                <p class="about-paragraph">
+                                    I'm a passionate creative developer who believes that code is the ultimate form of artistic expression. With over 5 years of experience crafting digital experiences, I've learned that the best products emerge when technology meets human-centered design.
+                                </p>
+                            </div>
+                            
+                            <div class="text-section" data-section="journey">
+                                <h3 class="section-subtitle">My Journey</h3>
+                                <p class="about-paragraph">
+                                    My journey began with a simple curiosity about how things work on the web, which evolved into a deep love for creating interactive experiences that not only function flawlessly but also delight and inspire users. I specialize in building futuristic interfaces, smooth animations, and scalable applications that push the boundaries of what's possible.
+                                </p>
+                            </div>
+                            
+                            <div class="text-section" data-section="philosophy">
+                                <h3 class="section-subtitle">Creative Philosophy</h3>
+                                <p class="about-paragraph">
+                                    When I'm not coding, you'll find me exploring the latest design trends, experimenting with new technologies, or sharing knowledge with the developer community. I believe in continuous learning and pushing creative boundaries to deliver exceptional digital experiences.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-navigation">
+                            <button class="nav-dot active" data-section="passion">
+                                <span class="dot-core"></span>
+                                <span class="dot-label">Passion</span>
+                            </button>
+                            <button class="nav-dot" data-section="journey">
+                                <span class="dot-core"></span>
+                                <span class="dot-label">Journey</span>
+                            </button>
+                            <button class="nav-dot" data-section="philosophy">
+                                <span class="dot-core"></span>
+                                <span class="dot-label">Philosophy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Work</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-project="1">
+                        <div class="project-image">
+                            <div class="image-placeholder">AI Dashboard</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">AI/ML</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">AI-Powered Analytics Dashboard</h3>
+                            <p class="project-description">A comprehensive analytics platform that leverages machine learning to provide real-time insights and predictive analytics for business intelligence.</p>
+                            <div class="project-meta">
+                                <span class="project-role">Lead Developer</span>
+                                <span class="project-timeline">3 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="2">
+                        <div class="project-image">
+                            <div class="image-placeholder">E-Commerce</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Stripe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Next-Gen E-Commerce Platform</h3>
+                            <p class="project-description">A modern e-commerce solution with AR product visualization, AI-powered recommendations, and seamless payment processing.</p>
+                            <div class="project-meta">
+                                <span class="project-role">Full-Stack Developer</span>
+                                <span class="project-timeline">4 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="3">
+                        <div class="project-image">
+                            <div class="image-placeholder">Mobile App</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">GraphQL</span>
+                                    <span class="tech-tag">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Fitness Tracking Mobile App</h3>
+                            <p class="project-description">A comprehensive fitness app with social features, personalized workout plans, and real-time health monitoring integration.</p>
+                            <div class="project-meta">
+                                <span class="project-role">Mobile Developer</span>
+                                <span class="project-timeline">6 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="4">
+                        <div class="project-image">
+                            <div class="image-placeholder">Web3 DApp</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Solidity</span>
+                                    <span class="tech-tag">Web3.js</span>
+                                    <span class="tech-tag">IPFS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">DeFi Yield Farming Platform</h3>
+                            <p class="project-description">A decentralized finance platform enabling users to earn yield through automated liquidity provision and yield farming strategies.</p>
+                            <div class="project-meta">
+                                <span class="project-role">Blockchain Developer</span>
+                                <span class="project-timeline">5 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="5">
+                        <div class="project-image">
+                            <div class="image-placeholder">SaaS Platform</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Redis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Management SaaS</h3>
+                            <p class="project-description">A comprehensive project management tool with real-time collaboration, time tracking, and advanced reporting capabilities.</p>
+                            <div class="project-meta">
+                                <span class="project-role">Full-Stack Developer</span>
+                                <span class="project-timeline">8 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="6">
+                        <div class="project-image">
+                            <div class="image-placeholder">AR Experience</div>
+                            <div class="project-overlay">
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Three.js</span>
+                                    <span class="tech-tag">WebXR</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Interactive AR Museum Experience</h3>
+                            <p class="project-description">An augmented reality experience that brings museum exhibits to life with interactive 3D models and immersive storytelling.</p>
+                            <div class="project-meta">
+                                <span class="project-role">AR/VR Developer</span>
+                                <span class="project-timeline">4 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Expertise & Skills</h2>
+                    <div class="title-underline"></div>
+                    <p class="section-subtitle">Mastering the art of digital creation with cutting-edge technologies</p>
+                </div>
+                
+                <!-- Skills Overview -->
+                <div class="skills-overview">
+                    <div class="skill-orbit">
+                        <div class="orbit-center">
+
+                            <div class="center-text">Full-Stack</div>
+                        </div>
+                        <div class="orbit-ring orbit-ring-1">
+                            <div class="orbiting-skill" data-skill="React">
+                                <div class="skill-orb">⚛️</div>
+                                <div class="skill-label">React</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="Node.js">
+                                <div class="skill-orb">🟢</div>
+                                <div class="skill-label">Node.js</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="Python">
+                                <div class="skill-orb">🐍</div>
+                                <div class="skill-label">Python</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="MongoDB">
+                                <div class="skill-orb">🗄️</div>
+                                <div class="skill-label">MongoDB</div>
+                            </div>
+                        </div>
+                        <div class="orbit-ring orbit-ring-2">
+                            <div class="orbiting-skill" data-skill="Vue.js">
+                                <div class="skill-orb">💚</div>
+                                <div class="skill-label">Vue.js</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="AWS">
+                                <div class="skill-orb">☁️</div>
+                                <div class="skill-label">AWS</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="Docker">
+                                <div class="skill-orb">🐳</div>
+                                <div class="skill-label">Docker</div>
+                            </div>
+                            <div class="orbiting-skill" data-skill="GraphQL">
+                                <div class="skill-orb">🔷</div>
+                                <div class="skill-label">GraphQL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Skills Tabs -->
+                <div class="skills-tabs-container">
+                    <div class="skills-tabs">
+                        <button class="skill-tab active" data-tab="frontend">
+                            <span class="tab-icon">🎨</span>
+                            <span class="tab-text">Frontend</span>
+                        </button>
+                        <button class="skill-tab" data-tab="backend">
+                            <span class="tab-icon">⚙️</span>
+                            <span class="tab-text">Backend</span>
+                        </button>
+                        <button class="skill-tab" data-tab="devops">
+                            <span class="tab-icon">🛠️</span>
+                            <span class="tab-text">DevOps</span>
+                        </button>
+                    </div>
+                    
+                    <div class="skills-content">
+                        <div class="skill-tab-content active" id="frontend">
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="React">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">⚛️</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">React & Next.js</div>
+                                            <div class="skill-level">Expert Level</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">4+ years</div>
+                                                <div class="skill-tech">Hooks, Context, SSR, SSG</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">95%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="Vue.js">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">💚</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Vue.js & Nuxt</div>
+                                            <div class="skill-level">Advanced</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">3+ years</div>
+                                                <div class="skill-tech">Composition API, Pinia, Vuex</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">88%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="CSS">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🎨</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">CSS3 & SASS</div>
+                                            <div class="skill-level">Expert Level</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">5+ years</div>
+                                                <div class="skill-tech">Grid, Flexbox, Animations, SCSS</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">92%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="92"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-tab-content" id="backend">
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="Node.js">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🟢</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Node.js & Express</div>
+                                            <div class="skill-level">Expert Level</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">4+ years</div>
+                                                <div class="skill-tech">REST APIs, WebSockets, JWT</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">94%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="94"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="Python">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🐍</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Python & Django</div>
+                                            <div class="skill-level">Advanced</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">3+ years</div>
+                                                <div class="skill-tech">DRF, Celery, PostgreSQL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">89%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="89"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="Database">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🗄️</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Databases</div>
+                                            <div class="skill-level">Advanced</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">4+ years</div>
+                                                <div class="skill-tech">MongoDB, PostgreSQL, Redis</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">87%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="87"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-tab-content" id="devops">
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="Cloud">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">☁️</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Cloud Platforms</div>
+                                            <div class="skill-level">Advanced</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">3+ years</div>
+                                                <div class="skill-tech">AWS, Docker, Kubernetes</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">85%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="Git">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🎯</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Version Control</div>
+                                            <div class="skill-level">Expert Level</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">5+ years</div>
+                                                <div class="skill-tech">Git, GitHub, GitLab, CI/CD</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">93%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="93"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item" data-skill="Design">
+                                    <div class="skill-header">
+                                        <div class="skill-icon">🎨</div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Design Tools</div>
+                                            <div class="skill-level">Advanced</div>
+                                            <div class="skill-details">
+                                                <div class="skill-experience">3+ years</div>
+                                                <div class="skill-tech">Figma, Adobe XD, Sketch</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-percentage">82%</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="82"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Stats -->
+                <div class="skills-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25">0</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">Client Satisfaction %</div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Achievements -->
+                <div class="certifications-section">
+                    <h3 class="section-subtitle">Certifications & Achievements</h3>
+                    <div class="certifications-grid">
+                        <div class="cert-item" data-cert="gcp">
+                            <div class="cert-icon">🏆</div>
+                            <div class="cert-info">
+                                <h4>Google Cloud Professional</h4>
+                                <p>Cloud Architecture & Development</p>
+                                <span class="cert-date">2023</span>
+                                <div class="cert-details">
+                                    <div class="cert-issuer">Google Cloud</div>
+                                    <div class="cert-skills">GCP, Kubernetes, BigQuery, Cloud Functions</div>
+                                    <div class="cert-status">Valid</div>
+                                </div>
+                            </div>
+                            <div class="cert-glow"></div>
+                        </div>
+                        <div class="cert-item" data-cert="aws">
+                            <div class="cert-icon">🎯</div>
+                            <div class="cert-info">
+                                <h4>AWS Solutions Architect</h4>
+                                <p>Cloud Infrastructure Design</p>
+                                <span class="cert-date">2022</span>
+                                <div class="cert-details">
+                                    <div class="cert-issuer">Amazon Web Services</div>
+                                    <div class="cert-skills">EC2, S3, Lambda, RDS, CloudFormation</div>
+                                    <div class="cert-status">Valid</div>
+                                </div>
+                            </div>
+                            <div class="cert-glow"></div>
+                        </div>
+                        <div class="cert-item" data-cert="react">
+                            <div class="cert-icon">⚡</div>
+                            <div class="cert-info">
+                                <h4>React Developer Certification</h4>
+                                <p>Advanced Frontend Development</p>
+                                <span class="cert-date">2023</span>
+                                <div class="cert-details">
+                                    <div class="cert-issuer">Meta (Facebook)</div>
+                                    <div class="cert-skills">React, JSX, Hooks, Context, Redux</div>
+                                    <div class="cert-status">Valid</div>
+                                </div>
+                            </div>
+                            <div class="cert-glow"></div>
+                        </div>
+                        <div class="cert-item" data-cert="cyber">
+                            <div class="cert-icon">🔒</div>
+                            <div class="cert-info">
+                                <h4>Cybersecurity Fundamentals</h4>
+                                <p>Security Best Practices</p>
+                                <span class="cert-date">2022</span>
+                                <div class="cert-details">
+                                    <div class="cert-issuer">CompTIA</div>
+                                    <div class="cert-skills">Network Security, Encryption, Risk Management</div>
+                                    <div class="cert-status">Valid</div>
+                                </div>
+                            </div>
+                            <div class="cert-glow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Journey -->
+                <div class="learning-journey">
+                    <h3 class="section-subtitle">My Learning Journey</h3>
+                    <div class="journey-timeline">
+                        <div class="journey-item">
+                            <div class="journey-year">2019</div>
+                            <div class="journey-content">
+                                <h4>Started with HTML & CSS</h4>
+                                <p>Began my coding journey with web fundamentals</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-year">2020</div>
+                            <div class="journey-content">
+                                <h4>JavaScript & React</h4>
+                                <p>Dove deep into modern frontend development</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-year">2021</div>
+                            <div class="journey-content">
+                                <h4>Backend & Databases</h4>
+                                <p>Mastered Node.js, Python, and database design</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-year">2022</div>
+                            <div class="journey-content">
+                                <h4>Cloud & DevOps</h4>
+                                <p>Learned cloud platforms and deployment strategies</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-year">2023</div>
+                            <div class="journey-content">
+                                <h4>Full-Stack Mastery</h4>
+                                <p>Became a complete full-stack developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Makes Me Different - Interactive Showcase -->
+                <div class="different-showcase">
+                    <div class="showcase-header">
+                        <h3 class="section-subtitle">What Makes Me Different</h3>
+                        <div class="showcase-subtitle">Unique Value Propositions</div>
+                    </div>
+                    
+                    <div class="interactive-grid">
+                        <div class="feature-card" data-feature="performance">
+                            <div class="card-background">
+                                <div class="bg-pattern"></div>
+                                <div class="bg-glow"></div>
+                            </div>
+                            <div class="feature-icon">
+                                <div class="icon-container">
+                                    <div class="icon-symbol">⚡</div>
+                                    <div class="icon-ring"></div>
+                                    <div class="icon-particles"></div>
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Performance Optimization</h4>
+                                <p class="feature-description">Expert in creating lightning-fast applications with 99.9% uptime</p>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+
+                        <div class="feature-card" data-feature="problem-solving">
+                            <div class="card-background">
+                                <div class="bg-pattern"></div>
+                                <div class="bg-glow"></div>
+                            </div>
+                            <div class="feature-icon">
+                                <div class="icon-container">
+                                    <div class="icon-symbol">🧠</div>
+                                    <div class="icon-ring"></div>
+                                    <div class="icon-particles"></div>
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Problem Solving</h4>
+                                <p class="feature-description">Complex technical challenges are my specialty and passion</p>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+
+                        <div class="feature-card" data-feature="mobile-first">
+                            <div class="card-background">
+                                <div class="bg-pattern"></div>
+                                <div class="bg-glow"></div>
+                            </div>
+                            <div class="feature-icon">
+                                <div class="icon-container">
+                                    <div class="icon-symbol">📱</div>
+                                    <div class="icon-ring"></div>
+                                    <div class="icon-particles"></div>
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">Mobile-First Design</h4>
+                                <p class="feature-description">Every project is built with mobile users as the priority</p>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+
+                        <div class="feature-card" data-feature="ui-ux">
+                            <div class="card-background">
+                                <div class="bg-pattern"></div>
+                                <div class="bg-glow"></div>
+                            </div>
+                            <div class="feature-icon">
+                                <div class="icon-container">
+                                    <div class="icon-symbol">🎨</div>
+                                    <div class="icon-ring"></div>
+                                    <div class="icon-particles"></div>
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h4 class="feature-title">UI/UX Excellence</h4>
+                                <p class="feature-description">Beautiful, intuitive interfaces that users love</p>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="process-header">
+                    <h2 class="section-title">My Process</h2>
+                    <div class="process-subtitle">Simple, effective approach to bringing your ideas to life</div>
+                </div>
+                
+                <!-- Interactive Process Steps -->
+                <div class="process-showcase">
+                    <div class="process-card" data-step="plan">
+                        <div class="step-background">
+                            <div class="step-pattern"></div>
+                            <div class="step-glow"></div>
+                        </div>
+                        <div class="step-icon">
+                            <div class="step-icon-container">
+                                <div class="step-symbol">📋</div>
+                                <div class="step-ring"></div>
+                                <div class="step-particles"></div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">01</div>
+                            <h3 class="step-title">Plan</h3>
+                            <p class="step-description">Understanding your goals and requirements</p>
+
+                        </div>
+                        <div class="step-overlay"></div>
+                    </div>
+
+                    <div class="process-card" data-step="design">
+                        <div class="step-background">
+                            <div class="step-pattern"></div>
+                            <div class="step-glow"></div>
+                        </div>
+                        <div class="step-icon">
+                            <div class="step-icon-container">
+                                <div class="step-symbol">🎨</div>
+                                <div class="step-ring"></div>
+                                <div class="step-particles"></div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">02</div>
+                            <h3 class="step-title">Design</h3>
+                            <p class="step-description">Creating beautiful, user-friendly interfaces</p>
+
+                        </div>
+                        <div class="step-overlay"></div>
+                    </div>
+
+                    <div class="process-card" data-step="build">
+                        <div class="step-background">
+                            <div class="step-pattern"></div>
+                            <div class="step-glow"></div>
+                        </div>
+                        <div class="step-icon">
+                            <div class="step-icon-container">
+                                <div class="step-symbol">⚡</div>
+                                <div class="step-ring"></div>
+                                <div class="step-particles"></div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">03</div>
+                            <h3 class="step-title">Build</h3>
+                            <p class="step-description">Developing with modern technologies</p>
+
+                        </div>
+                        <div class="step-overlay"></div>
+                    </div>
+
+                    <div class="process-card" data-step="launch">
+                        <div class="step-background">
+                            <div class="step-pattern"></div>
+                            <div class="step-glow"></div>
+                        </div>
+                        <div class="step-icon">
+                            <div class="step-icon-container">
+                                <div class="step-symbol">🚀</div>
+                                <div class="step-ring"></div>
+                                <div class="step-particles"></div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">04</div>
+                            <h3 class="step-title">Launch</h3>
+                            <p class="step-description">Deploying and supporting your project</p>
+
+                        </div>
+                        <div class="step-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Clients Say</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Junaid transformed our vision into a stunning reality. His attention to detail and innovative approach resulted in a website that exceeded all our expectations. The user experience is seamless and the performance is outstanding."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">S</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Chen</h4>
+                                <p class="author-role">CEO, TechFlow Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Working with Junaid was an absolute pleasure. His technical expertise combined with creative vision delivered a product that not only looks amazing but also performs flawlessly. He's truly a developer who understands both code and design."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">M</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Michael Rodriguez</h4>
+                                <p class="author-role">Product Manager, InnovateCorp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Junaid's ability to translate complex requirements into elegant solutions is remarkable. His portfolio speaks for itself - every project showcases innovation and technical excellence. Highly recommended for any ambitious project."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">E</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Emily Watson</h4>
+                                <p class="author-role">Creative Director, Digital Dreams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="tech-stack">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tech Stack Showcase</h2>
+                    <p class="section-subtitle">Cutting-edge technologies that power my digital creations</p>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <!-- Tech Categories Overview -->
+                <div class="tech-categories">
+                    <div class="category-pill active" data-category="all">
+
+                        <span class="pill-text">All Tech</span>
+                        <div class="pill-glow"></div>
+                    </div>
+                    <div class="category-pill" data-category="frontend">
+                        <span class="pill-icon">🎨</span>
+                        <span class="pill-text">Frontend</span>
+                        <div class="pill-glow"></div>
+                    </div>
+                    <div class="category-pill" data-category="backend">
+                        <span class="pill-icon">⚙️</span>
+                        <span class="pill-text">Backend</span>
+                        <div class="pill-glow"></div>
+                    </div>
+                    <div class="category-pill" data-category="database">
+                        <span class="pill-icon">🗄️</span>
+                        <span class="pill-text">Database</span>
+                        <div class="pill-glow"></div>
+                    </div>
+                    <div class="category-pill" data-category="tools">
+                        <span class="pill-icon">🛠️</span>
+                        <span class="pill-text">Tools</span>
+                        <div class="pill-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Featured Tech Showcase -->
+                <div class="featured-tech">
+                    <div class="featured-card">
+                        <div class="featured-icon">
+                            <div class="icon-container">
+                                <span class="icon-symbol">⚛️</span>
+                                <div class="icon-glow"></div>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">React</h3>
+                            <p class="featured-description">My go-to framework for building dynamic, scalable user interfaces with modern patterns and hooks</p>
+                            <div class="featured-stats">
+                                <div class="stat">
+                                    <span class="stat-number">95%</span>
+                                    <span class="stat-label">Proficiency</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Grid -->
+                <div class="tech-grid">
+                    <div class="tech-item cursor-tech" data-tech="React" data-category="frontend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">⚛️</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">React</h3>
+                            <p class="tech-description">Building dynamic user interfaces with modern React patterns and hooks</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Expert</span>
+                                <span class="tech-experience">4+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Hooks</span>
+                                <span class="tech-tag">Context</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">⚛️</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Node.js" data-category="backend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🟢</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Node.js</h3>
+                            <p class="tech-description">Server-side JavaScript for scalable backend applications and APIs</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">3+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">Microservices</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🟢</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="TypeScript" data-category="frontend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">📘</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">TypeScript</h3>
+                            <p class="tech-description">Adding type safety and better developer experience to JavaScript projects</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">3+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Types</span>
+                                <span class="tech-tag">Interfaces</span>
+                                <span class="tech-tag">Generics</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">📘</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Vue.js" data-category="frontend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">💚</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Vue.js</h3>
+                            <p class="tech-description">Progressive framework for building user interfaces with composition API</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Intermediate</span>
+                                <span class="tech-experience">2+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Composition API</span>
+                                <span class="tech-tag">Vuex</span>
+                                <span class="tech-tag">Nuxt.js</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">💚</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Python" data-category="backend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🐍</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Python</h3>
+                            <p class="tech-description">Backend development and data processing with Django and FastAPI</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">3+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Data Science</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🐍</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="PostgreSQL" data-category="database">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🐘</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">PostgreSQL</h3>
+                            <p class="tech-description">Reliable and powerful relational database management system</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">3+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Indexing</span>
+                                <span class="tech-tag">Performance</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🐘</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="MongoDB" data-category="database">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🍃</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">MongoDB</h3>
+                            <p class="tech-description">Flexible NoSQL database for modern applications and real-time data</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Intermediate</span>
+                                <span class="tech-experience">2+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">NoSQL</span>
+                                <span class="tech-tag">Aggregation</span>
+                                <span class="tech-tag">Atlas</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🍃</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="AWS" data-category="tools">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">☁️</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">AWS</h3>
+                            <p class="tech-description">Cloud infrastructure and deployment solutions for scalable applications</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Intermediate</span>
+                                <span class="tech-experience">2+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">EC2</span>
+                                <span class="tech-tag">S3</span>
+                                <span class="tech-tag">Lambda</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">☁️</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Docker" data-category="tools">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🐳</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Docker</h3>
+                            <p class="tech-description">Containerization for consistent deployment environments and microservices</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Intermediate</span>
+                                <span class="tech-experience">2+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Containers</span>
+                                <span class="tech-tag">Docker Compose</span>
+                                <span class="tech-tag">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🐳</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Git" data-category="tools">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">📚</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Git</h3>
+                            <p class="tech-description">Version control and collaborative development workflows</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Expert</span>
+                                <span class="tech-experience">5+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">GitHub</span>
+                                <span class="tech-tag">GitLab</span>
+                                <span class="tech-tag">Workflows</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">📚</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="Figma" data-category="tools">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">🎯</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">Figma</h3>
+                            <p class="tech-description">Design and prototyping collaborative platform for UI/UX</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">3+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Prototyping</span>
+                                <span class="tech-tag">Design Systems</span>
+                                <span class="tech-tag">Collaboration</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">🎯</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-item cursor-tech" data-tech="GSAP" data-category="frontend">
+                        <div class="tech-visual">
+                            <div class="tech-icon-container">
+                                <div class="tech-icon">✨</div>
+                                <div class="icon-ring"></div>
+                                <div class="icon-particles"></div>
+                            </div>
+                            <div class="tech-glow"></div>
+                        </div>
+                        <div class="tech-content">
+                            <h3 class="tech-name">GSAP</h3>
+                            <p class="tech-description">Professional-grade animations and interactions for web experiences</p>
+                            <div class="tech-meta">
+                                <span class="tech-level">Advanced</span>
+                                <span class="tech-experience">2+ years</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Animations</span>
+                                <span class="tech-tag">ScrollTrigger</span>
+                                <span class="tech-tag">Timeline</span>
+                            </div>
+                        </div>
+                        <div class="tech-overlay">
+                            <div class="overlay-content">
+                                <span class="overlay-icon">✨</span>
+                                <span class="overlay-text">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stats -->
+                <div class="tech-stats">
+                    <div class="stat-card">
+
+                        <div class="stat-content">
+                            <div class="stat-number" data-target="12">0</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Projects Built</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Achievements & Highlights</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3 class="achievement-title">Best Developer Award</h3>
+                        <p class="achievement-description">Recognized for outstanding contributions to open-source projects and innovative solutions</p>
+                        <span class="achievement-year">2024</span>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📊</div>
+                        <h3 class="achievement-title">50+ Projects Delivered</h3>
+                        <p class="achievement-description">Successfully completed over 50 projects across various industries and technologies</p>
+                        <span class="achievement-year">2020-2024</span>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⭐</div>
+                        <h3 class="achievement-title">GitHub Star</h3>
+                        <p class="achievement-description">Maintained repositories with 1000+ stars and active community contributions</p>
+                        <span class="achievement-year">2023</span>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎓</div>
+                        <h3 class="achievement-title">AWS Certified</h3>
+                        <p class="achievement-description">Certified Solutions Architect with expertise in cloud infrastructure and deployment</p>
+                        <span class="achievement-year">2023</span>
+                    </div>
+
+                    <div class="achievement-card">
+
+                        <h3 class="achievement-title">Performance Expert</h3>
+                        <p class="achievement-description">Optimized applications achieving 95+ Lighthouse scores consistently</p>
+                        <span class="achievement-year">2022-2024</span>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🤝</div>
+                        <h3 class="achievement-title">Community Leader</h3>
+                        <p class="achievement-description">Organized tech meetups and mentored 20+ junior developers</p>
+                        <span class="achievement-year">2021-2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Build Something Amazing Together!</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="contact-subtitle">Ready to bring your ideas to life?</h3>
+                        <p class="contact-description">
+                            I'm always excited to work on new projects and collaborate with creative minds. Whether you have a specific vision or need help exploring possibilities, let's discuss how we can create something extraordinary together.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>hello@junaid.dev</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <p>Available Worldwide</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div class="contact-text">
+                                    <h4>Response Time</h4>
+                                    <p>Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <div class="input-glow"></div>
+                        </div>
+                        
+                        <button type="submit" class="submit-button" id="submitButton">
+                            <span class="button-text">Send Message</span>
+                            <div class="button-icon">✈️</div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">J</span>
+                        <div class="logo-glow"></div>
+                    </div>
+                    <p class="footer-tagline">Building the future, one pixel at a time</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="social-links">
+                        <a href="https://github.com/junaid" class="social-link" aria-label="GitHub">
+                            <div class="social-icon">📚</div>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/junaid" class="social-link" aria-label="LinkedIn">
+                            <div class="social-icon">💼</div>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:hello@junaid.dev" class="social-link" aria-label="Email">
+                            <div class="social-icon">📧</div>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Junaid — Built with ❤️ & creative code</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="masterclass-3d.js"></script>
+</body>
+</html>
