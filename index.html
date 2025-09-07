@@ -56,7 +56,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">J</span>
+                 <img src="brand-logo.png" alt="Junaid Logo" class="logo-image">
                 <div class="logo-glow"></div>
             </div>
             <ul class="nav-menu" id="navMenu">
@@ -526,7 +526,7 @@
                                     </svg>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number">5+</div>
+                                    <div class="stat-number" data-target="5">0</div>
                                     <div class="stat-label">Years Experience</div>
                                 </div>
                                 <div class="stat-glow"></div>
@@ -550,7 +550,7 @@
                                     </svg>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number">50+</div>
+                                    <div class="stat-number" data-target="50">0</div>
                                     <div class="stat-label">Projects Completed</div>
                                 </div>
                                 <div class="stat-glow"></div>
@@ -572,7 +572,7 @@
                                     </svg>
                                 </div>
                                 <div class="stat-content">
-                                    <div class="stat-number">30+</div>
+                                    <div class="stat-number" data-target="30">0</div>
                                     <div class="stat-label">Happy Clients</div>
                                 </div>
                                 <div class="stat-glow"></div>
@@ -628,60 +628,185 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Featured Work</h2>
-                    <div class="title-underline"></div>
+                    <p class="section-subtitle">Innovative projects showcasing modern web technologies</p>
                 </div>
                 
-                <div class="projects-grid">
+                <!-- Compact Projects Grid -->
+                <div class="projects-compact-grid">
+                    <!-- Featured Project -->
                     <div class="project-card" data-project="1">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">AI Dashboard</div>
+                            <div class="image-container">
+                                <div class="image-placeholder ai-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- React Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                                                <path d="M12 1C12 1 8.5 3.5 8.5 3.5C8.5 3.5 12 6 12 6C12 6 15.5 3.5 15.5 3.5C15.5 3.5 12 1 12 1Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M12 6C12 6 15.5 8.5 15.5 8.5C15.5 8.5 12 11 12 11C12 11 8.5 8.5 8.5 8.5C8.5 8.5 12 6 12 6Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M12 11C12 11 15.5 13.5 15.5 13.5C15.5 13.5 12 16 12 16C12 16 8.5 13.5 8.5 13.5C8.5 13.5 12 11 12 11Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M12 16C12 16 15.5 18.5 15.5 18.5C15.5 18.5 12 21 12 21C12 21 8.5 18.5 8.5 18.5C8.5 18.5 12 16 12 16Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M8.5 3.5C8.5 3.5 6 6 6 6C6 6 8.5 8.5 8.5 8.5C8.5 8.5 11 6 11 6C11 6 8.5 3.5 8.5 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M8.5 8.5C8.5 8.5 6 11 6 11C6 11 8.5 13.5 8.5 13.5C8.5 13.5 11 11 11 11C11 11 8.5 8.5 8.5 8.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M8.5 13.5C8.5 13.5 6 16 6 16C6 16 8.5 18.5 8.5 18.5C8.5 18.5 11 16 11 16C11 16 8.5 13.5 8.5 13.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M15.5 3.5C15.5 3.5 18 6 18 6C18 6 15.5 8.5 15.5 8.5C15.5 8.5 13 6 13 6C13 6 15.5 3.5 15.5 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M15.5 8.5C15.5 8.5 18 11 18 11C18 11 15.5 13.5 15.5 13.5C15.5 13.5 13 11 13 11C13 11 15.5 8.5 15.5 8.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                                <path d="M15.5 13.5C15.5 13.5 18 16 18 16C18 16 15.5 18.5 15.5 18.5C15.5 18.5 13 16 13 16C13 16 15.5 13.5 15.5 13.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- Node.js Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- TensorFlow Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M1.292 5.856L11.54 0.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 12.24a.805.805 0 0 1-.921 0L1.292 7.312a.805.805 0 0 1 0-1.456z" fill="#FF6F00"/>
+                                                <path d="M1.292 9.856L11.54 4.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 16.24a.805.805 0 0 1-.921 0L1.292 11.312a.805.805 0 0 1 0-1.456z" fill="#FF8F00"/>
+                                                <path d="M1.292 13.856L11.54 8.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 20.24a.805.805 0 0 1-.921 0L1.292 15.312a.805.805 0 0 1 0-1.456z" fill="#FFA000"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">React</span>
-                                    <span class="tech-tag">Node.js</span>
-                                    <span class="tech-tag">AI/ML</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">TensorFlow</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">Demo</button>
+                                        <button class="action-btn code-btn">Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">AI-Powered Analytics Dashboard</h3>
-                            <p class="project-description">A comprehensive analytics platform that leverages machine learning to provide real-time insights and predictive analytics for business intelligence.</p>
+                            <p class="project-description">Advanced analytics platform with ML insights, real-time visualization, and predictive modeling.</p>
                             <div class="project-meta">
-                                <span class="project-role">Lead Developer</span>
-                                <span class="project-timeline">3 months</span>
+                                <span class="project-role">Full-Stack Developer</span>
+                                <span class="project-timeline">6 months</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Regular Projects -->
                     <div class="project-card" data-project="2">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">E-Commerce</div>
+                            <div class="image-container">
+                                <div class="image-placeholder ecommerce-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- Vue.js Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z" fill="#4FC08D"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- Firebase Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288L2.5 12.5l1.39 3.172z" fill="#FFCA28"/>
+                                                <path d="M17.48 8.79l-1.5-2.5L2.5 12.5l1.39 3.172L17.48 8.79z" fill="#FFA000"/>
+                                                <path d="M20.5 12.5L17.48 8.79l-1.5-2.5L2.5 12.5l1.39 3.172L20.5 12.5z" fill="#F57C00"/>
+                                                <path d="M20.5 12.5L2.5 12.5l1.39 3.172L20.5 12.5z" fill="#FF8F00"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- Stripe Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.274 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.349-2.2 1.349-1.822 0-4.644-.89-6.09-1.631l-.89 5.494C5.43 21.795 8.385 22 11.714 22c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" fill="#635BFF"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Vue.js</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">Stripe</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Vue.js</span>
+                                        <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">Stripe</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">Demo</button>
+                                        <button class="action-btn code-btn">Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title">Next-Gen E-Commerce Platform</h3>
-                            <p class="project-description">A modern e-commerce solution with AR product visualization, AI-powered recommendations, and seamless payment processing.</p>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">Modern e-commerce with AR visualization and AI recommendations.</p>
                             <div class="project-meta">
-                                <span class="project-role">Full-Stack Developer</span>
+                                <span class="project-role">Frontend Developer</span>
                                 <span class="project-timeline">4 months</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card" data-project="3">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">Mobile App</div>
+                            <div class="image-container">
+                                <div class="image-placeholder mobile-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- React Native Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <circle cx="12" cy="12" r="2" fill="#61DAFB"/>
+                                                <path d="M12 1C12 1 8.5 3.5 8.5 3.5C8.5 3.5 12 6 12 6C12 6 15.5 3.5 15.5 3.5C15.5 3.5 12 1 12 1Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M12 6C12 6 15.5 8.5 15.5 8.5C15.5 8.5 12 11 12 11C12 11 8.5 8.5 8.5 8.5C8.5 8.5 12 6 12 6Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M12 11C12 11 15.5 13.5 15.5 13.5C15.5 13.5 12 16 12 16C12 16 8.5 13.5 8.5 13.5C8.5 13.5 12 11 12 11Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M12 16C12 16 15.5 18.5 15.5 18.5C15.5 18.5 12 21 12 21C12 21 8.5 18.5 8.5 18.5C8.5 18.5 12 16 12 16Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M8.5 3.5C8.5 3.5 6 6 6 6C6 6 8.5 8.5 8.5 8.5C8.5 8.5 11 6 11 6C11 6 8.5 3.5 8.5 3.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M8.5 8.5C8.5 8.5 6 11 6 11C6 11 8.5 13.5 8.5 13.5C8.5 13.5 11 11 11 11C11 11 8.5 8.5 8.5 8.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M8.5 13.5C8.5 13.5 6 16 6 16C6 16 8.5 18.5 8.5 18.5C8.5 18.5 11 16 11 16C11 16 8.5 13.5 8.5 13.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M15.5 3.5C15.5 3.5 18 6 18 6C18 6 15.5 8.5 15.5 8.5C15.5 8.5 13 6 13 6C13 6 15.5 3.5 15.5 3.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M15.5 8.5C15.5 8.5 18 11 18 11C18 11 15.5 13.5 15.5 13.5C15.5 13.5 13 11 13 11C13 11 15.5 8.5 15.5 8.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                                <path d="M15.5 13.5C15.5 13.5 18 16 18 16C18 16 15.5 18.5 15.5 18.5C15.5 18.5 13 16 13 16C13 16 15.5 13.5 15.5 13.5Z" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- GraphQL Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2.5 19.5c-1.5 0-2.5-1-2.5-2.5s1-2.5 2.5-2.5 2.5 1 2.5 2.5-1 2.5-2.5 2.5zm5 0c-1.5 0-2.5-1-2.5-2.5s1-2.5 2.5-2.5 2.5 1 2.5 2.5-1 2.5-2.5 2.5zm-5-5c-1.5 0-2.5-1-2.5-2.5s1-2.5 2.5-2.5 2.5 1 2.5 2.5-1 2.5-2.5 2.5zm5 0c-1.5 0-2.5-1-2.5-2.5s1-2.5 2.5-2.5 2.5 1 2.5 2.5-1 2.5-2.5 2.5z" fill="#E10098"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- AWS Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M6.763 12.475c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M12.475 6.763c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M18.186 12.475c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M12.475 18.186c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M9.649 9.649c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M15.36 9.649c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M9.649 15.36c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                                <path d="M15.36 15.36c-.186-.186-.186-.488 0-.674l.674-.674c.186-.186.488-.186.674 0l.674.674c.186.186.186.488 0 .674l-.674.674c-.186.186-.488.186-.674 0l-.674-.674z" fill="#FF9900"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">React Native</span>
-                                    <span class="tech-tag">GraphQL</span>
-                                    <span class="tech-tag">AWS</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">React Native</span>
+                                        <span class="tech-tag">GraphQL</span>
+                                        <span class="tech-tag">AWS</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">View Project</button>
+                                        <button class="action-btn code-btn">View Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -696,13 +821,48 @@
                     </div>
 
                     <div class="project-card" data-project="4">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">Web3 DApp</div>
+                            <div class="image-container">
+                                <div class="image-placeholder web3-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- Solidity Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#363636"/>
+                                                <path d="M2 17L12 22L22 17" stroke="#363636" stroke-width="2" fill="none"/>
+                                                <path d="M2 12L12 17L22 12" stroke="#363636" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- Web3.js Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <circle cx="12" cy="12" r="10" fill="none" stroke="#F16822" stroke-width="2"/>
+                                                <path d="M12 6V12L16 14" stroke="#F16822" stroke-width="2" fill="none"/>
+                                                <path d="M8 8L12 6L16 8" stroke="#F16822" stroke-width="2" fill="none"/>
+                                                <path d="M8 16L12 18L16 16" stroke="#F16822" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- IPFS Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#65C2CB"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Solidity</span>
-                                    <span class="tech-tag">Web3.js</span>
-                                    <span class="tech-tag">IPFS</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Solidity</span>
+                                        <span class="tech-tag">Web3.js</span>
+                                        <span class="tech-tag">IPFS</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">View Project</button>
+                                        <button class="action-btn code-btn">View Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -717,13 +877,44 @@
                     </div>
 
                     <div class="project-card" data-project="5">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">SaaS Platform</div>
+                            <div class="image-container">
+                                <div class="image-placeholder saas-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- Next.js Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#000000"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- PostgreSQL Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M23.5 12c0 6.35-5.15 11.5-11.5 11.5S.5 18.35.5 12 5.65.5 12 .5 23.5 5.65 23.5 12z" fill="#336791"/>
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#FFFFFF"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- Redis Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#DC382D"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Next.js</span>
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">Redis</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Next.js</span>
+                                        <span class="tech-tag">PostgreSQL</span>
+                                        <span class="tech-tag">Redis</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">View Project</button>
+                                        <button class="action-btn code-btn">View Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -738,13 +929,47 @@
                     </div>
 
                     <div class="project-card" data-project="6">
+                        <div class="card-glow"></div>
                         <div class="project-image">
-                            <div class="image-placeholder">AR Experience</div>
+                            <div class="image-container">
+                                <div class="image-placeholder ar-gradient">
+                                    <div class="floating-elements">
+                                        <div class="floating-icon">
+                                            <!-- Three.js Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#000000"/>
+                                                <path d="M2 17L12 22L22 17" stroke="#000000" stroke-width="2" fill="none"/>
+                                                <path d="M2 12L12 17L22 12" stroke="#000000" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- WebXR Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#FF6B35"/>
+                                            </svg>
+                                        </div>
+                                        <div class="floating-icon">
+                                            <!-- TensorFlow Icon -->
+                                            <svg viewBox="0 0 24 24" class="floating-svg">
+                                                <path d="M1.292 5.856L11.54 0.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 12.24a.805.805 0 0 1-.921 0L1.292 7.312a.805.805 0 0 1 0-1.456z" fill="#FF6F00"/>
+                                                <path d="M1.292 9.856L11.54 4.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 16.24a.805.805 0 0 1-.921 0L1.292 11.312a.805.805 0 0 1 0-1.456z" fill="#FF8F00"/>
+                                                <path d="M1.292 13.856L11.54 8.24a.805.805 0 0 1 .921 0l10.247 5.616a.805.805 0 0 1 0 1.456L12.46 20.24a.805.805 0 0 1-.921 0L1.292 15.312a.805.805 0 0 1 0-1.456z" fill="#FFA000"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="project-overlay">
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Three.js</span>
-                                    <span class="tech-tag">WebXR</span>
-                                    <span class="tech-tag">TensorFlow</span>
+                                <div class="overlay-content">
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Three.js</span>
+                                        <span class="tech-tag">WebXR</span>
+                                        <span class="tech-tag">TensorFlow</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="action-btn view-btn">View Project</button>
+                                        <button class="action-btn code-btn">View Code</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1961,7 +2186,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <span class="logo-text">J</span>
+                         <img src="brand-logo.png" alt="Junaid Logo" class="logo-image">
                         <div class="logo-glow"></div>
                     </div>
                     <p class="footer-tagline">Building the future, one pixel at a time</p>
@@ -1986,7 +2211,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright">© 2025 Junaid — Built with ❤️ & creative code</p>
+                <p class="copyright">© 2025 Junaid — Built with lots of coffee & creative code</p>
             </div>
         </div>
     </footer>
@@ -2012,3 +2237,7 @@
     <script src="masterclass-3d.js"></script>
 </body>
 </html>
+
+
+
+

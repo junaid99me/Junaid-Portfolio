@@ -27,6 +27,7 @@ function initializeApp() {
     initializeEasterEggs();
     initializeParticles();
     initializeAbout();
+    initializeAboutStats();
     
     // Initialize all scroll functionality
     initializeScrollToTop();
@@ -234,7 +235,7 @@ function initializeHeroAnimations() {
     // Hero stats counter animation
     const statNumbers = document.querySelectorAll('.hero-stats .stat-number');
     statNumbers.forEach(stat => {
-        const target = parseInt(stat.textContent);
+        const target = parseInt(stat.getAttribute('data-target'));
         const increment = target / 50;
         let current = 0;
         
@@ -1199,11 +1200,14 @@ function initializeNavigation() {
 
 // ===== PROJECT MODALS =====
 function initializeProjectModals() {
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card, .showcase-card');
     const modal = document.querySelector('.modal');
     const modalContent = document.querySelector('.modal-content');
     
     if (!modal || !modalContent) return;
+    
+    // Add event listeners for action buttons
+    initializeProjectButtons();
     
     // Project data
     const projectData = {
@@ -1316,6 +1320,233 @@ function initializeProjectModals() {
             closeModal();
         }
     });
+}
+
+// ===== PROJECT BUTTONS =====
+function initializeProjectButtons() {
+    // View Project buttons
+    document.querySelectorAll('.view-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const projectCard = button.closest('.project-card, .showcase-card');
+            const projectId = projectCard.getAttribute('data-project');
+            showProjectDemo(projectId, 'demo');
+        });
+    });
+    
+    // View Code buttons
+    document.querySelectorAll('.code-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const projectCard = button.closest('.project-card, .showcase-card');
+            const projectId = projectCard.getAttribute('data-project');
+            showProjectDemo(projectId, 'code');
+        });
+    });
+}
+
+function showProjectDemo(projectId, type) {
+    const projectData = {
+        '1': {
+            title: 'AI-Powered Analytics Dashboard',
+            demo: {
+                url: 'https://ai-dashboard-demo.vercel.app',
+                description: 'Interactive AI dashboard with real-time analytics, machine learning insights, and predictive modeling capabilities.',
+                features: ['Real-time data visualization', 'ML-powered predictions', 'Interactive charts', 'Custom dashboards']
+            },
+            code: {
+                url: 'https://github.com/junaid/ai-dashboard',
+                description: 'Full-stack AI dashboard built with React, Node.js, and TensorFlow.js',
+                tech: ['React', 'Node.js', 'TensorFlow.js', 'D3.js', 'WebSocket']
+            }
+        },
+        '2': {
+            title: 'Next-Gen E-Commerce Platform',
+            demo: {
+                url: 'https://ecommerce-demo.vercel.app',
+                description: 'Modern e-commerce platform with AR product visualization and AI recommendations.',
+                features: ['AR product preview', 'AI recommendations', 'Seamless checkout', 'Mobile responsive']
+            },
+            code: {
+                url: 'https://github.com/junaid/ecommerce-platform',
+                description: 'Vue.js e-commerce solution with Firebase backend and Stripe integration',
+                tech: ['Vue.js', 'Firebase', 'Stripe', 'AR.js', 'Three.js']
+            }
+        },
+        '3': {
+            title: 'Fitness Tracking Mobile App',
+            demo: {
+                url: 'https://fitness-app-demo.netlify.app',
+                description: 'Comprehensive fitness app with social features and health monitoring.',
+                features: ['Workout tracking', 'Social challenges', 'Health metrics', 'Personalized plans']
+            },
+            code: {
+                url: 'https://github.com/junaid/fitness-app',
+                description: 'React Native fitness app with GraphQL and AWS backend',
+                tech: ['React Native', 'GraphQL', 'AWS', 'Expo', 'Apollo Client']
+            }
+        },
+        '4': {
+            title: 'DeFi Yield Farming Platform',
+            demo: {
+                url: 'https://defi-platform-demo.vercel.app',
+                description: 'Decentralized finance platform for yield farming and liquidity provision.',
+                features: ['Yield farming', 'Liquidity pools', 'DeFi protocols', 'Wallet integration']
+            },
+            code: {
+                url: 'https://github.com/junaid/defi-platform',
+                description: 'Web3 DeFi platform built with Solidity and Web3.js',
+                tech: ['Solidity', 'Web3.js', 'IPFS', 'Ethereum', 'MetaMask']
+            }
+        },
+        '5': {
+            title: 'Project Management SaaS',
+            demo: {
+                url: 'https://project-saas-demo.vercel.app',
+                description: 'Comprehensive project management tool with real-time collaboration.',
+                features: ['Task management', 'Team collaboration', 'Time tracking', 'Advanced reporting']
+            },
+            code: {
+                url: 'https://github.com/junaid/project-saas',
+                description: 'Next.js SaaS platform with PostgreSQL and Redis',
+                tech: ['Next.js', 'PostgreSQL', 'Redis', 'Prisma', 'NextAuth']
+            }
+        },
+        '6': {
+            title: 'Interactive AR Museum Experience',
+            demo: {
+                url: 'https://ar-museum-demo.vercel.app',
+                description: 'Augmented reality experience bringing museum exhibits to life.',
+                features: ['AR exhibits', '3D models', 'Interactive storytelling', 'Mobile AR']
+            },
+            code: {
+                url: 'https://github.com/junaid/ar-museum',
+                description: 'WebXR AR experience built with Three.js and TensorFlow',
+                tech: ['Three.js', 'WebXR', 'TensorFlow', 'A-Frame', 'WebGL']
+            }
+        }
+    };
+    
+    const project = projectData[projectId];
+    if (!project) return;
+    
+    const data = type === 'demo' ? project.demo : project.code;
+    
+    // Create demo modal
+    const modal = document.createElement('div');
+    modal.className = 'demo-modal';
+    modal.innerHTML = `
+        <div class="demo-modal-content">
+            <div class="demo-header">
+                <h2>${project.title}</h2>
+                <button class="demo-close">&times;</button>
+            </div>
+            <div class="demo-body">
+                <div class="demo-preview">
+                    <div class="demo-iframe-container">
+                        <iframe src="${data.url}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3>${type === 'demo' ? 'Live Demo' : 'Source Code'}</h3>
+                    <p>${data.description}</p>
+                    ${type === 'demo' ? `
+                        <div class="demo-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : `
+                        <div class="code-tech">
+                            <h4>Technologies:</h4>
+                            <div class="tech-tags">
+                                ${data.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
+                        </div>
+                    `}
+                    <div class="demo-actions">
+                        <a href="${data.url}" target="_blank" class="demo-link-btn">
+                            ${type === 'demo' ? 'Open Live Demo' : 'View on GitHub'}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const modalContent = modal.querySelector('.demo-modal-content');
+    modalContent.style.cssText = `
+        background: var(--card-bg);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 1200px;
+        max-height: 90vh;
+        overflow: hidden;
+        border: 1px solid var(--primary-cyan);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Animate in
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        modalContent.style.transform = 'scale(1)';
+    }, 10);
+    
+    // Close functionality
+    const closeBtn = modal.querySelector('.demo-close');
+    closeBtn.addEventListener('click', () => {
+        modal.style.opacity = '0';
+        modalContent.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            document.body.removeChild(modal);
+        }, 300);
+    });
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.opacity = '0';
+            modalContent.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                document.body.removeChild(modal);
+            }, 300);
+        }
+    });
+    
+    // Close on escape key
+    const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+            modal.style.opacity = '0';
+            modalContent.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                document.body.removeChild(modal);
+                document.removeEventListener('keydown', handleEscape);
+            }, 300);
+        }
+    };
+    document.addEventListener('keydown', handleEscape);
 }
 
 // ===== CONTACT FORM =====
@@ -1498,10 +1729,18 @@ function animateCounter(element, target) {
             clearInterval(timer);
         }
         
+        // Check if the element should show a + sign
+        const shouldShowPlus = element.classList.contains('stat-number') && 
+                              (element.closest('.hero-stats') || 
+                               element.closest('.skills-stats') || 
+                               element.closest('#about'));
+        
         if (element.textContent.includes('%')) {
             element.textContent = Math.floor(current) + '%';
-        } else if (element.textContent.includes('-')) {
-            element.textContent = element.dataset.target;
+        } else if (element.textContent.includes('+')) {
+            element.textContent = Math.floor(current) + '+';
+        } else if (shouldShowPlus) {
+            element.textContent = Math.floor(current) + '+';
         } else {
             element.textContent = Math.floor(current);
         }
@@ -2345,6 +2584,27 @@ document.addEventListener('click', (e) => {
 });
 
 // ===== ABOUT SECTION =====
+function initializeAboutStats() {
+    const statNumbers = document.querySelectorAll('#about .stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statElement = entry.target;
+                const target = parseInt(statElement.getAttribute('data-target'));
+                if (!isNaN(target)) {
+                    animateCounter(statElement, target);
+                }
+                observer.unobserve(statElement);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        observer.observe(stat);
+    });
+}
+
 function initializeAbout() {
     const navDots = document.querySelectorAll('.nav-dot');
     const textSections = document.querySelectorAll('.text-section');
