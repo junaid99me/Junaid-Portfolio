@@ -86,24 +86,49 @@ function executeControlAction(action, button) {
 }
 
 function accelerateSystem(scene, core, orbitalSystem) {
-    console.log('🚀 ACCELERATING SYSTEM...');
+    console.log('🚀 ACCELERATING HOLOGRAPHIC CORE...');
     
     // Speed up all animations dramatically
     scene.style.animationDuration = '5s';
     core.style.animationDuration = '3s';
     
-    // Speed up particles (now 20 particles)
+    // Speed up particles
     const particles = document.querySelectorAll('.q-particle');
     particles.forEach(particle => {
         particle.style.animationDuration = '2s';
         particle.style.filter = 'brightness(2) saturate(2)';
     });
     
-    // Speed up 3D holographic cubes
-    const cubes = document.querySelectorAll('.holographic-cube');
-    cubes.forEach((cube, index) => {
-        cube.style.animationDuration = `${3 + index}s`;
-        cube.style.filter = 'brightness(1.5)';
+    // Speed up holographic core elements
+    const dataSphere = document.querySelector('.data-sphere');
+    const rings = document.querySelectorAll('.ring');
+    const dataNodes = document.querySelectorAll('.data-node');
+    const beams = document.querySelectorAll('.beam');
+    const dataBits = document.querySelectorAll('.data-bit');
+    
+    if (dataSphere) {
+        dataSphere.style.animationDuration = '5s';
+        dataSphere.style.filter = 'brightness(1.5) saturate(1.5)';
+    }
+    
+    rings.forEach((ring, index) => {
+        ring.style.animationDuration = `${3 + index}s`;
+        ring.style.filter = 'brightness(1.5)';
+    });
+    
+    dataNodes.forEach(node => {
+        node.style.animationDuration = '1s';
+        node.style.filter = 'brightness(2)';
+    });
+    
+    beams.forEach(beam => {
+        beam.style.animationDuration = '1s';
+        beam.style.opacity = '1';
+    });
+    
+    dataBits.forEach(bit => {
+        bit.style.animationDuration = '2s';
+        bit.style.filter = 'brightness(1.8)';
     });
     
     // Speed up tech elements
@@ -119,7 +144,7 @@ function accelerateSystem(scene, core, orbitalSystem) {
     createSpeedLines();
     
     // Show notification
-    showSystemNotification('🚀 SYSTEM ACCELERATED!', 'success');
+    showSystemNotification('🚀 HOLOGRAPHIC CORE ACCELERATED!', 'success');
     
     // Reset after 5 seconds
     setTimeout(() => {
@@ -128,7 +153,7 @@ function accelerateSystem(scene, core, orbitalSystem) {
 }
 
 function stabilizeSystem(scene, core, orbitalSystem) {
-    console.log('⚖️ STABILIZING SYSTEM...');
+    console.log('⚖️ STABILIZING HOLOGRAPHIC CORE...');
     
     // Slow down all animations for smooth stabilization
     scene.style.animationDuration = '30s';
@@ -142,12 +167,41 @@ function stabilizeSystem(scene, core, orbitalSystem) {
         particle.style.animationTimingFunction = 'ease-in-out';
     });
     
-    // Stabilize 3D holographic cubes
-    const cubes = document.querySelectorAll('.holographic-cube');
-    cubes.forEach((cube, index) => {
-        cube.style.animationDuration = `${20 + index * 3}s`;
-        cube.style.filter = 'brightness(1.1)';
-        cube.style.animationTimingFunction = 'ease-in-out';
+    // Stabilize holographic core elements
+    const dataSphere = document.querySelector('.data-sphere');
+    const rings = document.querySelectorAll('.ring');
+    const dataNodes = document.querySelectorAll('.data-node');
+    const beams = document.querySelectorAll('.beam');
+    const dataBits = document.querySelectorAll('.data-bit');
+    
+    if (dataSphere) {
+        dataSphere.style.animationDuration = '25s';
+        dataSphere.style.filter = 'brightness(1.1)';
+        dataSphere.style.animationTimingFunction = 'ease-in-out';
+    }
+    
+    rings.forEach((ring, index) => {
+        ring.style.animationDuration = `${20 + index * 5}s`;
+        ring.style.filter = 'brightness(1.1)';
+        ring.style.animationTimingFunction = 'ease-in-out';
+    });
+    
+    dataNodes.forEach(node => {
+        node.style.animationDuration = '8s';
+        node.style.filter = 'brightness(1.1)';
+        node.style.animationTimingFunction = 'ease-in-out';
+    });
+    
+    beams.forEach(beam => {
+        beam.style.animationDuration = '8s';
+        beam.style.opacity = '0.6';
+        beam.style.animationTimingFunction = 'ease-in-out';
+    });
+    
+    dataBits.forEach(bit => {
+        bit.style.animationDuration = '10s';
+        bit.style.filter = 'brightness(1.1)';
+        bit.style.animationTimingFunction = 'ease-in-out';
     });
     
     // Stabilize tech elements
@@ -164,7 +218,7 @@ function stabilizeSystem(scene, core, orbitalSystem) {
     createHarmonyWaves();
     
     // Show notification
-    showSystemNotification('⚖️ SYSTEM STABILIZED', 'info');
+    showSystemNotification('⚖️ HOLOGRAPHIC CORE STABILIZED', 'info');
     
     // Reset after 5 seconds
     setTimeout(() => {
@@ -187,12 +241,41 @@ function quantumMode(scene, core, floatingTech) {
         particle.style.transform = `scale(${1 + Math.random() * 0.5})`;
     });
     
-    // Quantum holographic cube chaos
-    const cubes = document.querySelectorAll('.holographic-cube');
-    cubes.forEach((cube, index) => {
-        cube.style.animationDuration = `${1 + Math.random() * 2}s`;
-        cube.style.filter = 'brightness(2) saturate(2) hue-rotate(90deg)';
-        cube.style.animationDirection = Math.random() > 0.5 ? 'reverse' : 'normal';
+    // Quantum holographic core chaos
+    const dataSphere = document.querySelector('.data-sphere');
+    const rings = document.querySelectorAll('.ring');
+    const dataNodes = document.querySelectorAll('.data-node');
+    const beams = document.querySelectorAll('.beam');
+    const dataBits = document.querySelectorAll('.data-bit');
+    
+    if (dataSphere) {
+        dataSphere.style.animationDuration = `${1 + Math.random() * 2}s`;
+        dataSphere.style.filter = 'brightness(2) saturate(2) hue-rotate(90deg)';
+        dataSphere.style.animationDirection = Math.random() > 0.5 ? 'reverse' : 'normal';
+    }
+    
+    rings.forEach((ring, index) => {
+        ring.style.animationDuration = `${1 + Math.random() * 2}s`;
+        ring.style.filter = 'brightness(2) saturate(2) hue-rotate(120deg)';
+        ring.style.animationDirection = Math.random() > 0.5 ? 'reverse' : 'normal';
+    });
+    
+    dataNodes.forEach(node => {
+        node.style.animationDuration = `${0.5 + Math.random() * 1}s`;
+        node.style.filter = 'brightness(3) saturate(3) hue-rotate(240deg)';
+        node.style.transform = `scale(${1.5 + Math.random() * 0.5})`;
+    });
+    
+    beams.forEach(beam => {
+        beam.style.animationDuration = `${0.8 + Math.random() * 1.2}s`;
+        beam.style.opacity = '1';
+        beam.style.filter = 'brightness(2.5) saturate(2.5) hue-rotate(180deg)';
+    });
+    
+    dataBits.forEach(bit => {
+        bit.style.animationDuration = `${0.6 + Math.random() * 1.4}s`;
+        bit.style.filter = 'brightness(2.5) saturate(2.5) hue-rotate(300deg)';
+        bit.style.transform = `scale(${1.8 + Math.random() * 0.7})`;
     });
     
     // Quantum tech elements
@@ -219,17 +302,16 @@ function quantumMode(scene, core, floatingTech) {
 
 // Reset to normal state
 function resetToNormal() {
-    console.log('🔄 Resetting to normal state...');
+    console.log('🔄 Resetting holographic core to normal state...');
     
     const scene = document.querySelector('.scene-3d-container');
     const core = document.querySelector('.holographic-core');
     const particles = document.querySelectorAll('.q-particle');
-    const rings = document.querySelectorAll('.orbit-ring');
     const techElements = document.querySelectorAll('.tech-element');
     
     // Reset scene
     scene.style.animationDuration = '20s';
-    core.style.animationDuration = '30s';
+    core.style.animationDuration = '8s';
     
     // Reset particles
     particles.forEach(particle => {
@@ -238,12 +320,41 @@ function resetToNormal() {
         particle.style.transform = 'scale(1)';
     });
     
-    // Reset holographic cubes
-    const cubes = document.querySelectorAll('.holographic-cube');
-    cubes.forEach((cube, index) => {
-        cube.style.animationDuration = `${15 + index * 5}s`;
-        cube.style.filter = 'brightness(1) saturate(1)';
-        cube.style.animationDirection = 'normal';
+    // Reset holographic core elements
+    const dataSphere = document.querySelector('.data-sphere');
+    const rings = document.querySelectorAll('.ring');
+    const dataNodes = document.querySelectorAll('.data-node');
+    const beams = document.querySelectorAll('.beam');
+    const dataBits = document.querySelectorAll('.data-bit');
+    
+    if (dataSphere) {
+        dataSphere.style.animationDuration = '20s';
+        dataSphere.style.filter = 'brightness(1) saturate(1)';
+        dataSphere.style.animationDirection = 'normal';
+    }
+    
+    rings.forEach((ring, index) => {
+        ring.style.animationDuration = `${20 + index * 5}s`;
+        ring.style.filter = 'brightness(1) saturate(1)';
+        ring.style.animationDirection = 'normal';
+    });
+    
+    dataNodes.forEach(node => {
+        node.style.animationDuration = '3s';
+        node.style.filter = 'brightness(1) saturate(1)';
+        node.style.transform = 'scale(1)';
+    });
+    
+    beams.forEach(beam => {
+        beam.style.animationDuration = '4s';
+        beam.style.opacity = '';
+        beam.style.filter = 'brightness(1) saturate(1)';
+    });
+    
+    dataBits.forEach(bit => {
+        bit.style.animationDuration = '6s';
+        bit.style.filter = 'brightness(1) saturate(1)';
+        bit.style.transform = 'scale(1)';
     });
     
     // Reset tech elements
@@ -366,6 +477,9 @@ function initializeMouseInteractions() {
         
         // Update cursor position for custom effects
         updateCustomCursor(e.clientX, e.clientY);
+        
+        // Update cube mouse follow effects
+        updateCubeMouseFollow(x, y);
     });
     
     scene.addEventListener('mouseenter', function() {
@@ -377,6 +491,278 @@ function initializeMouseInteractions() {
         this.style.cursor = 'default';
         deactivateMouseEffects();
     });
+    
+    // Add cube click interactions
+    initializeCubeInteractions();
+}
+
+// Holographic Core Mouse Follow Effect
+function updateCubeMouseFollow(x, y) {
+    const core = document.querySelector('.holographic-core');
+    
+    if (core) {
+        // Convert mouse position to rotation values
+        const rotateX = (y - 0.5) * 20;
+        const rotateY = (x - 0.5) * 20;
+        
+        // Apply mouse follow effect
+        core.style.setProperty('--mouse-x', `${rotateX}deg`);
+        core.style.setProperty('--mouse-y', `${rotateY}deg`);
+        core.classList.add('mouse-follow');
+        
+        // Remove class after animation
+        setTimeout(() => {
+            core.classList.remove('mouse-follow');
+        }, 100);
+    }
+}
+
+// Initialize Holographic Core Interactions
+function initializeCubeInteractions() {
+    const core = document.querySelector('.holographic-core');
+    
+    if (core) {
+        // Click effect
+        core.addEventListener('click', function(e) {
+            e.stopPropagation();
+            createCoreClickEffect(this, e);
+            showCoreInfo();
+        });
+        
+        // Hover effects
+        core.addEventListener('mouseenter', function() {
+            createCoreHoverParticles(this);
+            enhanceCoreGlow(this);
+        });
+        
+        core.addEventListener('mouseleave', function() {
+            resetCoreGlow(this);
+        });
+    }
+}
+
+// Create Cube Click Effect
+function createCubeClickEffect(cube, event) {
+    // Add click animation
+    cube.classList.add('click-effect');
+    setTimeout(() => {
+        cube.classList.remove('click-effect');
+    }, 600);
+    
+    // Create explosion particles
+    const rect = cube.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, 
+                rgba(34, 211, 238, 1) 0%, 
+                rgba(124, 58, 237, 0.8) 50%, 
+                transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            left: ${centerX}px;
+            top: ${centerY}px;
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
+        `;
+        
+        document.body.appendChild(particle);
+        
+        const angle = (i / 20) * Math.PI * 2;
+        const distance = 80 + Math.random() * 60;
+        const targetX = centerX + Math.cos(angle) * distance;
+        const targetY = centerY + Math.sin(angle) * distance;
+        
+        particle.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${targetX - centerX}px, ${targetY - centerY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 1200,
+            easing: 'ease-out'
+        }).onfinish = () => {
+            particle.remove();
+        };
+    }
+}
+
+// Create Cube Hover Particles
+function createCubeHoverParticles(cube) {
+    const rect = cube.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(34, 211, 238, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            left: ${centerX}px;
+            top: ${centerY}px;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+        `;
+        
+        document.body.appendChild(particle);
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 30 + Math.random() * 40;
+        const targetX = centerX + Math.cos(angle) * distance;
+        const targetY = centerY + Math.sin(angle) * distance;
+        
+        particle.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${targetX - centerX}px, ${targetY - centerY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 800,
+            easing: 'ease-out'
+        }).onfinish = () => {
+            particle.remove();
+        };
+    }
+}
+
+// Enhance Cube Glow
+function enhanceCubeGlow(cube) {
+    cube.style.filter = `
+        drop-shadow(0 0 50px rgba(34, 211, 238, 0.8))
+        drop-shadow(0 0 80px rgba(124, 58, 237, 0.6))
+        brightness(1.3)
+    `;
+}
+
+// Reset Cube Glow
+function resetCubeGlow(cube) {
+    cube.style.filter = '';
+}
+
+// Create Core Click Effect
+function createCoreClickEffect(core, event) {
+    // Add click animation
+    core.classList.add('click-effect');
+    setTimeout(() => {
+        core.classList.remove('click-effect');
+    }, 800);
+    
+    // Create explosion particles
+    const rect = core.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, 
+                rgba(34, 211, 238, 1) 0%, 
+                rgba(124, 58, 237, 0.8) 50%, 
+                transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            left: ${centerX}px;
+            top: ${centerY}px;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
+        `;
+        
+        document.body.appendChild(particle);
+        
+        const angle = (i / 25) * Math.PI * 2;
+        const distance = 100 + Math.random() * 80;
+        const targetX = centerX + Math.cos(angle) * distance;
+        const targetY = centerY + Math.sin(angle) * distance;
+        
+        particle.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${targetX - centerX}px, ${targetY - centerY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 1500,
+            easing: 'ease-out'
+        }).onfinish = () => {
+            particle.remove();
+        };
+    }
+}
+
+// Create Core Hover Particles
+function createCoreHoverParticles(core) {
+    const rect = core.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: rgba(34, 211, 238, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            left: ${centerX}px;
+            top: ${centerY}px;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+        `;
+        
+        document.body.appendChild(particle);
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 40 + Math.random() * 60;
+        const targetX = centerX + Math.cos(angle) * distance;
+        const targetY = centerY + Math.sin(angle) * distance;
+        
+        particle.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${targetX - centerX}px, ${targetY - centerY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 1000,
+            easing: 'ease-out'
+        }).onfinish = () => {
+            particle.remove();
+        };
+    }
+}
+
+// Enhance Core Glow
+function enhanceCoreGlow(core) {
+    core.style.filter = `
+        drop-shadow(0 0 60px rgba(34, 211, 238, 0.8))
+        drop-shadow(0 0 100px rgba(124, 58, 237, 0.6))
+        brightness(1.4)
+    `;
+}
+
+// Reset Core Glow
+function resetCoreGlow(core) {
+    core.style.filter = '';
+}
+
+// Show Core Info
+function showCoreInfo() {
+    const messages = [
+        'Holographic Data Core - Active',
+        'Quantum Processing Unit - Online',
+        'Neural Network Matrix - Syncing',
+        'AI Consciousness Hub - Evolving',
+        'Data Stream Processor - Running',
+        'Holographic Interface - Connected'
+    ];
+    
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    
+    showSystemNotification(`🔮 ${randomMessage}`, 'info');
 }
 
 function updateParallaxElements(x, y) {

@@ -18,12 +18,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    perspective: 2000px;
+    perspective: 1500px;
     perspective-origin: center center;
     overflow: hidden;
     background: transparent;
     z-index: 0; /* Below navbar (1000) and hero content (1) */
-    pointer-events: none;
+    pointer-events: auto; /* Enable interactions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scene-3d-container {
@@ -39,130 +42,221 @@
     display: none;
 }
 
-/* Central Holographic Core - Highly Visible */
-.holographic-core {
+
+
+
+
+
+
+/* Advanced Holographic Data Core System */
+.holographic-core-container {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    perspective-origin: center center;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .holographic-core-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .data-sphere {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .ring-1 { width: 100px; height: 100px; }
+    .ring-2 { width: 125px; height: 125px; }
+    .ring-3 { width: 150px; height: 150px; }
+    
+    .beam-1, .beam-2, .beam-3, .beam-4 {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .holographic-core-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .data-sphere {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .ring-1 { width: 80px; height: 80px; }
+    .ring-2 { width: 100px; height: 100px; }
+    .ring-3 { width: 120px; height: 120px; }
+    
+    .beam-1, .beam-2, .beam-3, .beam-4 {
+        width: 120px;
+    }
+}
+
+.holographic-core {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: coreFloat 8s infinite ease-in-out;
+    transform-origin: center center;
+}
+
+/* Main Data Sphere */
+.data-sphere {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    animation: sphereRotate 20s infinite linear;
+}
+
+.sphere-surface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        radial-gradient(circle at 30% 30%, 
+            rgba(34, 211, 238, 0.3) 0%, 
+            rgba(124, 58, 237, 0.2) 40%,
+            rgba(245, 158, 11, 0.1) 70%,
+            transparent 100%);
+    box-shadow: 
+        inset 0 0 40px rgba(34, 211, 238, 0.4),
+        0 0 60px rgba(34, 211, 238, 0.3),
+        inset 0 0 80px rgba(124, 58, 237, 0.2);
+    border: 2px solid rgba(34, 211, 238, 0.5);
+}
+
+.sphere-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        repeating-conic-gradient(
+            from 0deg at 50% 50%,
+            transparent 0deg,
+            rgba(34, 211, 238, 0.1) 2deg,
+            transparent 4deg
+        );
+    animation: gridRotate 15s infinite linear;
+}
+
+.sphere-data-streams {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            rgba(34, 211, 238, 0.2) 45deg,
+            transparent 90deg,
+            transparent 180deg,
+            rgba(124, 58, 237, 0.2) 225deg,
+            transparent 270deg
+        );
+    animation: dataStreamRotate 8s infinite linear;
+}
+
+/* Orbital Rings */
+.orbital-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ringRotate 25s infinite linear;
+}
+
+.ring-1 {
     width: 120px;
     height: 120px;
-    transform: translate(-50%, -50%);
-    transform-style: preserve-3d;
-    animation: coreRotate 20s infinite linear;
-    opacity: 0.9;
-    z-index: 1; /* Within the 3D scene context */
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    animation-duration: 20s;
+    transform: translate(-50%, -50%) rotateX(60deg);
 }
 
-.core-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
+.ring-2 {
+    width: 150px;
+    height: 150px;
+    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.2);
+    animation-duration: 30s;
+    animation-direction: reverse;
+    transform: translate(-50%, -50%) rotateY(60deg);
 }
 
-.quantum-sphere {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
+.ring-3 {
+    width: 180px;
+    height: 180px;
+    border-color: rgba(245, 158, 11, 0.2);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+    animation-duration: 40s;
+    transform: translate(-50%, -50%) rotateZ(45deg);
 }
 
-.sphere-layer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    border: 2px solid;
-    transform: translate(-50%, -50%);
-    animation: spherePulse 4s infinite ease-in-out;
-}
-
-.sphere-layer.layer-1 {
-    width: 40px;
-    height: 40px;
-    border-color: rgba(34, 211, 238, 0.8);
-    box-shadow:
-        0 0 25px rgba(34, 211, 238, 0.6),
-        inset 0 0 25px rgba(34, 211, 238, 0.2);
-    animation-delay: 0s;
-}
-
-.sphere-layer.layer-2 {
-    width: 50px;
-    height: 50px;
-    border-color: rgba(124, 58, 237, 0.08);
-    box-shadow: 
-        0 0 10px rgba(124, 58, 237, 0.06),
-        inset 0 0 10px rgba(124, 58, 237, 0.01);
-    animation-delay: 0.5s;
-}
-
-.sphere-layer.layer-3 {
-    width: 70px;
-    height: 70px;
-    border-color: rgba(245, 158, 11, 0.06);
-    box-shadow: 
-        0 0 12px rgba(245, 158, 11, 0.04),
-        inset 0 0 12px rgba(245, 158, 11, 0.01);
-    animation-delay: 1s;
-}
-
-.sphere-layer.layer-4 {
-    width: 90px;
-    height: 90px;
-    border-color: rgba(34, 211, 238, 0.04);
-    box-shadow: 
-        0 0 15px rgba(34, 211, 238, 0.03),
-        inset 0 0 15px rgba(34, 211, 238, 0.005);
-    animation-delay: 1.5s;
-}
-
-.quantum-particles {
+/* Data Nodes */
+.data-nodes {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
     transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
 }
 
-.q-particle {
+.data-node {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     background: radial-gradient(circle, 
         rgba(34, 211, 238, 1) 0%, 
-        rgba(124, 58, 237, 0.8) 50%, 
+        rgba(124, 58, 237, 0.8) 50%,
         transparent 100%);
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
-    animation: quantumOrbit 8s infinite linear;
-    opacity: 1;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
+    animation: nodePulse 3s infinite ease-in-out;
 }
 
-.q-1 { top: 0; left: 50%; animation-delay: 0s; }
-.q-2 { top: 50%; right: 0; animation-delay: 0.4s; }
-.q-3 { bottom: 0; left: 50%; animation-delay: 0.8s; }
-.q-4 { top: 50%; left: 0; animation-delay: 1.2s; }
-.q-5 { top: 25%; right: 25%; animation-delay: 1.6s; }
-.q-6 { bottom: 25%; left: 25%; animation-delay: 2s; }
-.q-7 { top: 25%; left: 25%; animation-delay: 2.4s; }
-.q-8 { bottom: 25%; right: 25%; animation-delay: 2.8s; }
-.q-9 { top: 12.5%; right: 12.5%; animation-delay: 3.2s; }
-.q-10 { bottom: 12.5%; left: 12.5%; animation-delay: 3.6s; }
-.q-11 { top: 12.5%; left: 12.5%; animation-delay: 4s; }
-.q-12 { bottom: 12.5%; right: 12.5%; animation-delay: 4.4s; }
-.q-13 { top: 37.5%; right: 37.5%; animation-delay: 4.8s; }
-.q-14 { bottom: 37.5%; left: 37.5%; animation-delay: 5.2s; }
-.q-15 { top: 37.5%; left: 37.5%; animation-delay: 5.6s; }
-.q-16 { bottom: 37.5%; right: 37.5%; animation-delay: 6s; }
-.q-17 { top: 75%; right: 75%; animation-delay: 6.4s; }
-.q-18 { bottom: 75%; left: 75%; animation-delay: 6.8s; }
-.q-19 { top: 75%; left: 75%; animation-delay: 7.2s; }
-.q-20 { bottom: 75%; right: 75%; animation-delay: 7.6s; }
+.data-node.node-1 { top: 20%; left: 50%; transform: translateX(-50%) translateZ(60px); }
+.data-node.node-2 { top: 50%; right: 20%; transform: translateY(-50%) translateZ(60px); }
+.data-node.node-3 { bottom: 20%; left: 50%; transform: translateX(-50%) translateZ(60px); }
+.data-node.node-4 { top: 50%; left: 20%; transform: translateY(-50%) translateZ(60px); }
+.data-node.node-5 { top: 30%; left: 30%; transform: translateZ(45px); }
+.data-node.node-6 { bottom: 30%; right: 30%; transform: translateZ(45px); }
 
-/* 3D Holographic Cube System */
-.holographic-cube-system {
+/* Energy Beams */
+.energy-beams {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -170,79 +264,53 @@
     height: 100%;
     transform: translate(-50%, -50%);
     transform-style: preserve-3d;
-    opacity: 0.8;
 }
 
-.holographic-cube {
+.beam {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    transform: translate(-50%, -50%);
-    transform-style: preserve-3d;
-    animation: holographicCubeRotate 20s infinite linear;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(34, 211, 238, 0.8) 50%, 
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+    animation: beamPulse 4s infinite ease-in-out;
 }
 
-.cube-1 {
-    animation-duration: 15s;
-    opacity: 0.9;
+.beam-1 { 
+    width: 200px; 
+    height: 2px; 
+    top: 30%; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(0deg); 
+    animation-delay: 0s;
+}
+.beam-2 { 
+    width: 200px; 
+    height: 2px; 
+    top: 70%; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(90deg); 
+    animation-delay: 1s;
+}
+.beam-3 { 
+    width: 200px; 
+    height: 2px; 
+    top: 50%; 
+    left: 30%; 
+    transform: translateY(-50%) rotate(45deg); 
+    animation-delay: 2s;
+}
+.beam-4 { 
+    width: 200px; 
+    height: 2px; 
+    top: 50%; 
+    right: 30%; 
+    transform: translateY(-50%) rotate(-45deg); 
+    animation-delay: 3s;
 }
 
-.cube-2 {
-    width: 160px;
-    height: 160px;
-    animation-duration: 25s;
-    animation-direction: reverse;
-    opacity: 0.7;
-    transform: translate(-50%, -50%) translateZ(120px);
-}
-
-/* Holographic Cube Faces */
-.cube-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(45deg, 
-            rgba(34, 211, 238, 0.1) 0%, 
-            rgba(124, 58, 237, 0.05) 50%, 
-            rgba(34, 211, 238, 0.1) 100%);
-    border: 1px solid rgba(34, 211, 238, 0.3);
-    box-shadow: 
-        inset 0 0 30px rgba(34, 211, 238, 0.2),
-        0 0 20px rgba(34, 211, 238, 0.3);
-    backdrop-filter: blur(1px);
-}
-
-/* True 3D Face Positioning */
-.face-front { 
-    transform: translateZ(100px); 
-    background: linear-gradient(45deg, rgba(34, 211, 238, 0.15), rgba(124, 58, 237, 0.08));
-}
-.face-back { 
-    transform: translateZ(-100px) rotateY(180deg); 
-    background: linear-gradient(45deg, rgba(124, 58, 237, 0.12), rgba(34, 211, 238, 0.06));
-}
-.face-left { 
-    transform: rotateY(-90deg) translateZ(100px); 
-    background: linear-gradient(45deg, rgba(34, 211, 238, 0.1), rgba(124, 58, 237, 0.05));
-}
-.face-right { 
-    transform: rotateY(90deg) translateZ(100px); 
-    background: linear-gradient(45deg, rgba(124, 58, 237, 0.1), rgba(34, 211, 238, 0.05));
-}
-.face-top { 
-    transform: rotateX(90deg) translateZ(100px); 
-    background: linear-gradient(45deg, rgba(34, 211, 238, 0.08), rgba(124, 58, 237, 0.04));
-}
-.face-bottom { 
-    transform: rotateX(-90deg) translateZ(100px); 
-    background: linear-gradient(45deg, rgba(124, 58, 237, 0.08), rgba(34, 211, 238, 0.04));
-}
-
-/* Holographic Wireframe */
-.cube-wireframe {
+/* Floating Data Bits */
+.floating-data {
     position: absolute;
     top: 0;
     left: 0;
@@ -251,37 +319,70 @@
     transform-style: preserve-3d;
 }
 
-.wire-edge {
+.data-bit {
     position: absolute;
-    background: linear-gradient(90deg, 
-        rgba(34, 211, 238, 0.8) 0%, 
-        rgba(124, 58, 237, 0.6) 50%, 
-        rgba(34, 211, 238, 0.8) 100%);
-    box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
-    animation: wireframePulse 3s infinite ease-in-out;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, 
+        rgba(34, 211, 238, 1) 0%, 
+        rgba(124, 58, 237, 0.8) 50%,
+        transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
+    animation: dataBitFloat 6s infinite ease-in-out;
 }
 
-/* Wireframe Edge Positioning */
-.edge-1 { width: 200px; height: 2px; top: 0; left: 0; transform: translateZ(100px); }
-.edge-2 { width: 200px; height: 2px; top: 198px; left: 0; transform: translateZ(100px); }
-.edge-3 { width: 2px; height: 200px; top: 0; left: 0; transform: translateZ(100px); }
-.edge-4 { width: 2px; height: 200px; top: 0; left: 198px; transform: translateZ(100px); }
-.edge-5 { width: 200px; height: 2px; top: 0; left: 0; transform: translateZ(-100px); }
-.edge-6 { width: 200px; height: 2px; top: 198px; left: 0; transform: translateZ(-100px); }
-.edge-7 { width: 2px; height: 200px; top: 0; left: 0; transform: translateZ(-100px); }
-.edge-8 { width: 2px; height: 200px; top: 0; left: 198px; transform: translateZ(-100px); }
-.edge-9 { width: 2px; height: 200px; top: 0; left: 0; transform: rotateY(-90deg) translateZ(100px); }
-.edge-10 { width: 2px; height: 200px; top: 0; left: 198px; transform: rotateY(90deg) translateZ(100px); }
-.edge-11 { width: 200px; height: 2px; top: 0; left: 0; transform: rotateX(90deg) translateZ(100px); }
-.edge-12 { width: 200px; height: 2px; top: 198px; left: 0; transform: rotateX(-90deg) translateZ(100px); }
+.data-bit.bit-1 { top: 10%; left: 20%; animation-delay: 0s; }
+.data-bit.bit-2 { top: 20%; right: 15%; animation-delay: 0.8s; }
+.data-bit.bit-3 { bottom: 15%; left: 25%; animation-delay: 1.6s; }
+.data-bit.bit-4 { bottom: 25%; right: 20%; animation-delay: 2.4s; }
+.data-bit.bit-5 { top: 40%; left: 10%; animation-delay: 3.2s; }
+.data-bit.bit-6 { top: 60%; right: 10%; animation-delay: 4s; }
+.data-bit.bit-7 { top: 80%; left: 40%; animation-delay: 4.8s; }
+.data-bit.bit-8 { top: 15%; left: 60%; animation-delay: 5.6s; }
+
+/* Status Indicators */
+.status-indicators {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-light {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+    animation: statusPulse 2s infinite ease-in-out;
+}
+
+.status-light.active {
+    background: #10b981;
+    color: #10b981;
+}
+
+.status-light.processing {
+    background: #f59e0b;
+    color: #f59e0b;
+    animation-delay: 0.5s;
+}
+
+.status-light.standby {
+    background: #6b7280;
+    color: #6b7280;
+    animation-delay: 1s;
+}
 
 /* Holographic Particles */
 .holographic-particles {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     transform-style: preserve-3d;
 }
 
@@ -295,15 +396,50 @@
         transparent 100%);
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
-    animation: holoParticleFloat 6s infinite ease-in-out;
+    animation: holoParticleFloat 4s infinite ease-in-out;
 }
 
-.holo-particle.p1 { top: 20%; left: 20%; animation-delay: 0s; }
-.holo-particle.p2 { top: 80%; left: 80%; animation-delay: 1s; }
-.holo-particle.p3 { top: 20%; left: 80%; animation-delay: 2s; }
-.holo-particle.p4 { top: 80%; left: 20%; animation-delay: 3s; }
-.holo-particle.p5 { top: 50%; left: 10%; animation-delay: 4s; }
-.holo-particle.p6 { top: 50%; left: 90%; animation-delay: 5s; }
+.holo-particle.p1 { top: 10%; left: 10%; animation-delay: 0s; }
+.holo-particle.p2 { top: 90%; left: 90%; animation-delay: 0.5s; }
+.holo-particle.p3 { top: 10%; left: 90%; animation-delay: 1s; }
+.holo-particle.p4 { top: 90%; left: 10%; animation-delay: 1.5s; }
+.holo-particle.p5 { top: 50%; left: 5%; animation-delay: 2s; }
+.holo-particle.p6 { top: 50%; left: 95%; animation-delay: 2.5s; }
+.holo-particle.p7 { top: 5%; left: 50%; animation-delay: 3s; }
+.holo-particle.p8 { top: 95%; left: 50%; animation-delay: 3.5s; }
+
+/* Corner Nodes */
+.corner-nodes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+
+.corner-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, 
+        rgba(34, 211, 238, 1) 0%, 
+        rgba(124, 58, 237, 0.8) 50%,
+        transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 1);
+    animation: nodePulse 2s infinite ease-in-out;
+}
+
+/* Corner node positions */
+.node-1 { top: 0; left: 0; transform: translateZ(100px); }
+.node-2 { top: 0; right: 0; transform: translateZ(100px); }
+.node-3 { bottom: 0; left: 0; transform: translateZ(100px); }
+.node-4 { bottom: 0; right: 0; transform: translateZ(100px); }
+.node-5 { top: 0; left: 0; transform: translateZ(-100px); }
+.node-6 { top: 0; right: 0; transform: translateZ(-100px); }
+.node-7 { bottom: 0; left: 0; transform: translateZ(-100px); }
+.node-8 { bottom: 0; right: 0; transform: translateZ(-100px); }
 
 .element-core {
     position: absolute;
@@ -858,16 +994,7 @@
 
 /* Mobile Optimizations - Integrated Design */
 @media (max-width: 768px) {
-    .holographic-core {
-        width: 120px;
-        height: 120px;
-        opacity: 0.5;
-    }
     
-    .sphere-layer.layer-1 { width: 35px; height: 35px; }
-    .sphere-layer.layer-2 { width: 60px; height: 60px; }
-    .sphere-layer.layer-3 { width: 85px; height: 85px; }
-    .sphere-layer.layer-4 { width: 110px; height: 110px; }
     
     .orbit-ring.ring-1 { width: 180px; height: 180px; opacity: 0.2; }
     .orbit-ring.ring-2 { width: 250px; height: 250px; opacity: 0.15; }
@@ -920,11 +1047,6 @@
 }
 
 @media (max-width: 480px) {
-    .holographic-core {
-        width: 100px;
-        height: 100px;
-        opacity: 0.4;
-    }
     
     .orbit-ring.ring-1 { width: 140px; height: 140px; opacity: 0.15; }
     .orbit-ring.ring-2 { width: 200px; height: 200px; opacity: 0.1; }
@@ -1009,21 +1131,87 @@
     }
 }
 
-@keyframes holographicCubeRotate {
+@keyframes coreFloat {
+    0%, 100% {
+        transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotateX(5deg) rotateY(90deg);
+    }
+    50% {
+        transform: translateY(0px) rotateX(0deg) rotateY(180deg);
+    }
+    75% {
+        transform: translateY(-5px) rotateX(-5deg) rotateY(270deg);
+    }
+}
+
+@keyframes sphereRotate {
     0% {
         transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
-    25% {
-        transform: translate(-50%, -50%) rotateX(90deg) rotateY(90deg) rotateZ(45deg);
+    100% {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }
-    50% {
-        transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg) rotateZ(90deg);
-    }
-    75% {
-        transform: translate(-50%, -50%) rotateX(270deg) rotateY(270deg) rotateZ(135deg);
+}
+
+@keyframes gridRotate {
+    0% {
+        transform: rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(180deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dataStreamRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ringRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes beamPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
+}
+
+@keyframes dataBitFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
     }
 }
 
@@ -1040,12 +1228,101 @@
 
 @keyframes holoParticleFloat {
     0%, 100% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-15px) scale(1.1) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-25px) scale(1.3) rotate(180deg);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-10px) scale(1.1) rotate(270deg);
+        opacity: 0.9;
+    }
+}
+
+@keyframes holographicScan {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes dataStream {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes energyFlow {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes nodePulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0.8;
     }
     50% {
-        transform: translateY(-20px) scale(1.2);
+        transform: translate(-50%, -50%) scale(1.5);
         opacity: 1;
+    }
+}
+
+@keyframes particleTrail {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+@keyframes particleGlow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.6;
     }
 }
 
@@ -1094,8 +1371,83 @@
 
 .cube-1 {
     filter: drop-shadow(0 0 25px rgba(34, 211, 238, 0.4));
+    transition: all 0.3s ease;
 }
 
 .cube-2 {
     filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.3));
+    transition: all 0.3s ease;
+}
+
+/* Interactive Hover Effects for Holographic Core */
+.holographic-core:hover {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+    filter: 
+        drop-shadow(0 0 40px rgba(34, 211, 238, 0.8))
+        drop-shadow(0 0 60px rgba(124, 58, 237, 0.6))
+        brightness(1.2);
+    animation-play-state: paused;
+}
+
+.holographic-core:hover .data-sphere {
+    animation-duration: 10s;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.holographic-core:hover .sphere-surface {
+    box-shadow: 
+        inset 0 0 60px rgba(34, 211, 238, 0.6),
+        0 0 80px rgba(34, 211, 238, 0.5),
+        inset 0 0 100px rgba(124, 58, 237, 0.3);
+}
+
+.holographic-core:hover .ring {
+    animation-duration: 15s;
+    box-shadow: 0 0 30px currentColor;
+}
+
+.holographic-core:hover .data-node {
+    transform: scale(1.5);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 1);
+    animation-duration: 1.5s;
+}
+
+.holographic-core:hover .beam {
+    opacity: 1;
+    transform: scaleX(1.5);
+    animation-duration: 2s;
+}
+
+.holographic-core:hover .data-bit {
+    transform: scale(1.8);
+    box-shadow: 0 0 25px rgba(34, 211, 238, 1);
+    animation-duration: 3s;
+}
+
+.holographic-core:hover .status-light {
+    transform: scale(1.5);
+    animation-duration: 1s;
+}
+
+/* Mouse Follow Effect */
+.holographic-core.mouse-follow {
+    transform: scale(1.02) rotateX(var(--mouse-x, 0deg)) rotateY(var(--mouse-y, 0deg));
+    transition: transform 0.1s ease-out;
+}
+
+/* Click Effect */
+.holographic-core.click-effect {
+    animation: coreClickPulse 0.8s ease-out;
+}
+
+@keyframes coreClickPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
