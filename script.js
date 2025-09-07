@@ -28,6 +28,30 @@ function initializeApp() {
     initializeParticles();
     initializeAbout();
     initializeAboutStats();
+    initializeJourneyAnimation();
+    initializeUltraJourney();
+    
+    // Initialize 3D Learning Journey with a slight delay to ensure DOM is ready
+    setTimeout(() => {
+        initializeLearningJourney3D();
+        
+        // Add a simple test to verify 3D transforms work
+        setTimeout(() => {
+            const testCard = document.querySelector('.card-3d');
+            if (testCard) {
+                console.log('Testing 3D transform...');
+                testCard.style.transform = 'translateY(-50px) rotateX(45deg) rotateY(45deg) scale(1.5)';
+                testCard.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+                setTimeout(() => {
+                    testCard.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
+                    testCard.style.backgroundColor = '';
+                    console.log('3D transform test completed');
+                }, 1000);
+            } else {
+                console.error('No test card found!');
+            }
+        }, 500);
+    }, 100);
     
     // Initialize all scroll functionality
     initializeScrollToTop();
@@ -3112,5 +3136,522 @@ function initializeScrollEventListeners() {
         }, { passive: true });
     }
 }
+
+// ===== JOURNEY ANIMATION - SCROLL TRIGGERED =====
+function initializeJourneyAnimation() {
+    const journeyItems = document.querySelectorAll('.journey-item');
+    const learningJourney = document.querySelector('.learning-journey');
+    const timeline = document.querySelector('.journey-timeline');
+    
+    if (!journeyItems.length || !learningJourney || !timeline) return;
+    
+    let visibleCount = 0;
+    const totalItems = journeyItems.length;
+    
+    // Create individual intersection observers for each journey item
+    const observers = [];
+    
+    journeyItems.forEach((item, index) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add a small delay based on index for staggered effect
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                        item.classList.add('animate-in');
+                        visibleCount++;
+                        
+                        // Update progress indicator
+                        updateTimelineProgress();
+                        
+                        // Add a subtle bounce effect
+                        setTimeout(() => {
+                            item.style.transform = 'translateY(0) scale(1.02)';
+                            setTimeout(() => {
+                                item.style.transform = 'translateY(0) scale(1)';
+                            }, 150);
+                        }, 200);
+                    }, index * 150); // 150ms stagger for better visual effect
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        observer.observe(item);
+        observers.push(observer);
+    });
+    
+    // Function to update timeline progress
+    function updateTimelineProgress() {
+        const progress = (visibleCount / totalItems) * 100;
+        const progressLine = timeline.querySelector('.timeline-progress');
+        if (progressLine) {
+            progressLine.style.height = `${progress}%`;
+        }
+    }
+    
+    // Also observe the timeline to make it appear first
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start the timeline animation
+                timeline.style.setProperty('--timeline-opacity', '1');
+                timelineObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -200px 0px'
+    });
+    
+    timelineObserver.observe(learningJourney);
+}
+
+// ===== ULTRA INTERACTIVE LEARNING JOURNEY =====
+function initializeUltraJourney() {
+    const journeySection = document.querySelector('.learning-journey-ultra');
+    if (!journeySection) return;
+
+    // Initialize timeline interactions
+    initializeTimelineInteractions();
+    
+    // Initialize 3D card effects
+    initialize3DCardEffects();
+    
+    // Initialize floating action button
+    initializeFAB();
+    
+    // Initialize particle effects
+    initializeJourneyParticles();
+    
+    // Initialize scroll-based animations
+    initializeJourneyScrollAnimations();
+    
+    // Initialize card flip animations
+    initializeCardFlipAnimations();
+}
+
+
+function initialize3DCardEffects() {
+    const cards = document.querySelectorAll('.journey-card-ultra');
+    
+    cards.forEach(card => {
+        // Mouse move 3D effect
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `translateY(-20px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        // Reset on mouse leave
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+        });
+        
+        // Click to flip card
+        card.addEventListener('click', () => {
+            const container = card.querySelector('.card-3d-container');
+            if (container) {
+                container.style.transform = container.style.transform.includes('rotateY(180deg)') 
+                    ? 'rotateY(0deg)' 
+                    : 'rotateY(180deg)';
+            }
+        });
+        
+        // Progress ring animation
+        const progressRing = card.querySelector('.progress-ring-circle');
+        if (progressRing) {
+            const progress = card.querySelector('.progress-text').textContent;
+            const percentage = parseInt(progress);
+            const circumference = 2 * Math.PI * 25;
+            const offset = circumference - (percentage / 100) * circumference;
+            
+            progressRing.style.strokeDashoffset = offset;
+        }
+    });
+}
+
+function initializeFAB() {
+    const fabButton = document.getElementById('journey-fab');
+    if (!fabButton) return;
+    
+    fabButton.addEventListener('click', () => {
+        // Scroll to top of journey section
+        const journeySection = document.querySelector('.learning-journey-ultra');
+        if (journeySection) {
+            journeySection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+        
+        // Add click animation
+        fabButton.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            fabButton.style.transform = 'scale(1)';
+        }, 150);
+    });
+    
+    // Show/hide FAB based on scroll position
+    window.addEventListener('scroll', () => {
+        const journeySection = document.querySelector('.learning-journey-ultra');
+        if (journeySection) {
+            const rect = journeySection.getBoundingClientRect();
+            const fab = fabButton.parentElement;
+            
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                fab.style.opacity = '1';
+                fab.style.transform = 'translateY(0)';
+            } else {
+                fab.style.opacity = '0';
+                fab.style.transform = 'translateY(20px)';
+            }
+        }
+    });
+}
+
+function initializeJourneyParticles() {
+    const cards = document.querySelectorAll('.journey-card-ultra');
+    
+    cards.forEach(card => {
+        const particles = card.querySelector('.card-particles');
+        if (!particles) return;
+        
+        // Create floating particles
+        for (let i = 0; i < 5; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: var(--primary-cyan);
+                border-radius: 50%;
+                pointer-events: none;
+                opacity: 0.6;
+                animation: floatParticle ${3 + Math.random() * 2}s ease-in-out infinite;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation-delay: ${Math.random() * 2}s;
+            `;
+            particles.appendChild(particle);
+        }
+    });
+    
+    // Add CSS for floating particles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes floatParticle {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) scale(1); 
+                opacity: 0.6; 
+            }
+            50% { 
+                transform: translateY(-20px) translateX(10px) scale(1.2); 
+                opacity: 0.3; 
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+function initializeJourneyScrollAnimations() {
+    const cards = document.querySelectorAll('.journey-card-ultra');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                    
+                    // Animate progress ring
+                    const progressRing = entry.target.querySelector('.progress-ring-circle');
+                    if (progressRing) {
+                        progressRing.style.animation = 'progressRing 2s ease-out forwards';
+                    }
+                    
+                    // Animate skill tags
+                    const skillTags = entry.target.querySelectorAll('.skill-tag-ultra');
+                    skillTags.forEach((tag, tagIndex) => {
+                        setTimeout(() => {
+                            tag.style.opacity = '1';
+                            tag.style.transform = 'translateY(0) scale(1)';
+                        }, tagIndex * 100);
+                    });
+                }, index * 200);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px) scale(0.9)';
+        card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        const skillTags = card.querySelectorAll('.skill-tag-ultra');
+        skillTags.forEach(tag => {
+            tag.style.opacity = '0';
+            tag.style.transform = 'translateY(20px) scale(0.8)';
+            tag.style.transition = 'all 0.5s ease';
+        });
+        
+        observer.observe(card);
+    });
+}
+
+function initializeCardFlipAnimations() {
+    const cards = document.querySelectorAll('.journey-card-ultra');
+    
+    cards.forEach(card => {
+        // Add keyboard support
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const container = card.querySelector('.card-3d-container');
+                if (container) {
+                    container.style.transform = container.style.transform.includes('rotateY(180deg)') 
+                        ? 'rotateY(0deg)' 
+                        : 'rotateY(180deg)';
+                }
+            }
+        });
+        
+        // Make cards focusable
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Flip card for ${card.dataset.year}`);
+    });
+}
+
+// ===== ENHANCED SCROLL EFFECTS =====
+function initializeEnhancedScrollEffects() {
+    // Parallax effect for journey section
+    const journeySection = document.querySelector('.learning-journey-ultra');
+    if (!journeySection) return;
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        if (journeySection) {
+            journeySection.style.transform = `translateY(${rate}px)`;
+        }
+    });
+}
+
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function optimizeScrollPerformance() {
+    let ticking = false;
+    
+    function updateScrollEffects() {
+        // Throttled scroll updates
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    });
+}
+
+// ===== 3D LEARNING JOURNEY SYSTEM =====
+function initializeLearningJourney3D() {
+    console.log('Initializing 3D Learning Journey...');
+    
+    const cards = document.querySelectorAll('.card-3d');
+    const timelineDots = document.querySelectorAll('.timeline-dot-3d');
+    const headerParticles = document.getElementById('header-particles');
+    
+    console.log('Found cards:', cards.length);
+    console.log('Found timeline dots:', timelineDots.length);
+    
+    if (cards.length === 0) {
+        console.error('No cards found! Check if the HTML structure is correct.');
+        return;
+    }
+    
+    // Timeline removed for cleaner design
+    
+    // Particle systems removed for cleaner design
+    
+    // Timeline particles removed for cleaner design
+    
+    // Initialize 3D hover effects (temporarily disable card interactions)
+    // initializeCardInteractions(cards);
+    initialize3DHoverEffects(cards);
+    
+    // Initialize progress ring animations
+    // Progress rings removed with timeline
+    
+    // Initialize staggered loading
+    initializeStaggeredLoading(cards);
+    
+    console.log('3D Learning Journey initialized successfully!');
+}
+
+function initializeCardInteractions(cards) {
+    cards.forEach(card => {
+        let isFlipped = false;
+        
+        // Hover to flip
+        card.addEventListener('mouseenter', () => {
+            if (!isFlipped) {
+                card.classList.add('flipped');
+                isFlipped = true;
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (isFlipped) {
+                card.classList.remove('flipped');
+                isFlipped = false;
+            }
+        });
+        
+        // Click to flip (for touch devices)
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            isFlipped = !isFlipped;
+            card.classList.toggle('flipped');
+            
+            // Add haptic feedback if supported
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        });
+        
+        // Keyboard support
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                isFlipped = !isFlipped;
+                card.classList.toggle('flipped');
+            }
+        });
+        
+        // Make cards focusable
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Flip card for ${card.dataset.year}`);
+    });
+}
+
+// Timeline interactions removed for cleaner design
+
+// Particle systems removed for cleaner design
+
+// Particle creation functions removed for cleaner design
+
+// Card particle functions removed for cleaner design
+
+function initialize3DHoverEffects(cards) {
+    if (cards.length === 0) {
+        console.error('No cards found for 3D effects!');
+        return;
+    }
+    
+    cards.forEach((card, index) => {
+        
+        // Ensure proper positioning for 3D effects
+        card.style.zIndex = '10';
+        card.style.position = 'relative';
+        
+        // Click to flip card (for touch devices)
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            card.classList.toggle('flipped');
+        });
+        
+        // Hover to flip and 3D effects
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('flipped');
+            card.style.transform = 'translateY(-20px) rotateX(10deg) rotateY(10deg) scale(1.05)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('flipped');
+            card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+        
+        // 3D mouse tracking
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate rotation based on mouse position
+            const rotateX = (y - centerY) / 3; // Balanced sensitivity
+            const rotateY = (centerX - x) / 3; // Balanced sensitivity
+            
+            // Apply 3D rotation with smooth effect
+            const newTransform = `translateY(-20px) rotateX(${10 + rotateX}deg) rotateY(${10 + rotateY}deg) scale(1.05)`;
+            card.style.transform = newTransform;
+        });
+    });
+}
+
+// Progress rings function removed with timeline
+
+// Timeline particles removed for cleaner design
+
+// Timeline ripple effects removed for cleaner design
+
+function initializeStaggeredLoading(cards) {
+    // Cards are already set up with CSS animations
+    // This function can be used for additional loading effects
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    });
+    
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+}
+
+// Add CSS for card highlight animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes cardHighlight {
+        0% { 
+            transform: translateY(0) scale(1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        50% { 
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(34, 211, 238, 0.4);
+        }
+        100% { 
+            transform: translateY(0) scale(1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    }
+`;
+document.head.appendChild(style);
 
 
